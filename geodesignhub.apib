@@ -26,11 +26,16 @@ The API uses standard HTTP response codes to communicate the status of the reque
 ## Group Projects API
 Resources related to projects on Geodesign Hub.
 
-## Projects Collection [projects/]
+## Projects Collection [/projects/]
 
 ### List All Projects [GET]
 Returns a list of projects that has the current user as a member.
+    
++ Request
+    + Headers
 
+            Authorization: Token ABC123
+            
 + Response 200 (application/json)
         
         [
