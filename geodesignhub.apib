@@ -490,7 +490,6 @@ Returns all the diagrams for the project by ID and description.
               }
             ]
 
-
 ## Diagram Detail [/projects/{projectid}/diagrams/{diagramid}/]
 
 ### Get details of a diagram  [GET]
@@ -601,6 +600,105 @@ Returns the a hash of the last modified date, can be used to see if a diagram ha
           "changehash": "57266cf8"
         }
 
+
+## All Diagrams Details [/projects/{projectid}/diagrams/all/]
+
+### Get details of a diagram  [GET]
+Returns the a list of Diagram geometries and properties for all the diagrams in the project. 
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+
+
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "geojson": {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "properties": {},
+                            "geometry": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            -44.0826416015625,
+                                            -20.118162005832378
+                                        ],
+                                        [
+                                            -44.0826416015625,
+                                            -19.811607192086974
+                                        ],
+                                        [
+                                            -43.772621154785156,
+                                            -19.811607192086974
+                                        ],
+                                        [
+                                            -43.772621154785156,
+                                            -20.118162005832378
+                                        ],
+                                        [
+                                            -44.0826416015625,
+                                            -20.118162005832378
+                                        ]
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "sysid": 4,
+                "rank": 5,
+                "id": 23,
+                "description": "Housing Policy"
+            },
+            {
+                "geojson": {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "properties": {},
+                            "geometry": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            -44.0826416015625,
+                                            -20.118162005832378
+                                        ],
+                                        [
+                                            -44.0826416015625,
+                                            -19.811607192086974
+                                        ],
+                                        [
+                                            -43.772621154785156,
+                                            -19.811607192086974
+                                        ],
+                                        [
+                                            -44.0826416015625,
+                                            -20.118162005832378
+                                        ]
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "sysid": 32,
+                "rank": 1,
+                "id": 21,
+                "description": "New Shopping Mall"
+            }
+        ]
 
 ## User Diagrams selections [/projects/{projectid}/members/{username}/diagrams/]
 
