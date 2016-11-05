@@ -28,7 +28,7 @@ Resources related to projects on Geodesign Hub.
 
 ## Projects Collection [/projects/]
 
-### List All Projects [GET]
+### List all projects [GET]
 Returns a list of projects that has the current user as a member.
     
 + Request
@@ -92,16 +92,13 @@ Returns a list of all the usernames that are a part of the project.
         {
           "members": [
             {
-              "username": "ufeusr1",
-              "id": 1
+              "username": "ufeusr1"
             },
             {
-              "username": "ufeusr2",
-              "id": 2
+              "username": "ufeusr2"
             },
             {
-              "username": "ufeusr3",
-              "id": 4
+              "username": "ufeusr3"
             }
           ]
         }
@@ -122,13 +119,12 @@ Returns a string with bounding box for the project study area coordinates in a `
 + Response 200 (application/json)
 
         {
-          "id": 1,
           "bounds": "-0.11569976806640624,51.49624032118747,-0.06420135498046875,51.52829020697338"
         }
         
-## Project Constraints Geometry [/projects/{projectid}/constraints/]
+## Project Constraints [/projects/{projectid}/constraints/]
 
-### Get project constraints  [GET]
+### Get project constraints [GET]
 Returns a GeoJSON geometry of constraints set within the project area.
 
 + Parameters
@@ -214,9 +210,9 @@ Returns a GeoJSON geometry of constraints set within the project area.
           "description": "No Description Added. Please add one."
         }
 
-## Project Boundaries Geometry [/projects/{projectid}/boundaries/]
+## Project Boundaries [/projects/{projectid}/boundaries/]
 
-### Get project boundaries  [GET]
+### Get project boundaries [GET]
 Returns a GeoJSON geometry of the first boundary set within the project area.
 
 + Parameters
@@ -302,9 +298,9 @@ Returns a GeoJSON geometry of the first boundary set within the project area.
           "description": "No Description Added. Please add one."
         }
 
-## Project Second Boundaries Geometry [/projects/{projectid}/secondboundaries/]
+## Project Second Boundaries [/projects/{projectid}/secondboundaries/]
 
-### Get project boundaries  [GET]
+### Get second project boundaries [GET]
 Returns a GeoJSON geometry of second boundaries set within the project area. (Upto two boundaries can be set in a project)
 
 + Parameters
@@ -413,7 +409,7 @@ Resources related to diagrams on Geodesign Hub.
 
 ## Diagrams Collection [/projects/{projectid}/diagrams/]
 
-### List project diagrams  [GET]
+### List project diagrams [GET]
 Returns all the diagrams for the project by ID and description.
 
 + Parameters
@@ -489,512 +485,10 @@ Returns all the diagrams for the project by ID and description.
               }
             ]
 
-## Diagram Detail [/projects/{projectid}/diagrams/{diagramid}/]
 
-### Get details of a diagram  [GET]
-Returns the a GeoJSON feature collection geometry of the diagram that is passed in the diagram ID.
+## All Diagrams [/projects/{projectid}/diagrams/all/]
 
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-        {
-          "geojson": {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "geometry": {
-                  "type": "Polygon",
-                  "coordinates": [
-                    [
-                      [
-                        -0.09514331817626952,
-                        51.51555307745177
-                      ],
-                      [
-                        -0.09394168853759766,
-                        51.51523260058079
-                      ],
-                      [
-                        -0.08668899536132812,
-                        51.51549966479653
-                      ],
-                      [
-                        -0.0856161117553711,
-                        51.515659902574384
-                      ],
-                      [
-                        -0.08085250854492186,
-                        51.51547295844541
-                      ],
-                      [
-                        -0.08020877838134766,
-                        51.51531272000991
-                      ],
-                      [
-                        -0.07797718048095703,
-                        51.51437798456801
-                      ],
-                      [
-                        -0.07746219635009766,
-                        51.51395067054886
-                      ],
-                      [
-                        -0.07741928100585936,
-                        51.51352335252112
-                      ],
-                      [
-                        -0.07784843444824219,
-                        51.5129891993494
-                      ],
-                      [
-                        -0.07973670959472656,
-                        51.51280224425956
-                      ],
-                      [
-                        -0.0832986831665039,
-                        51.51309603048481
-                      ],
-                      [
-                        -0.08703231811523438,
-                        51.51309603048481
-                      ],
-                      [
-                        -0.08870601654052734,
-                        51.5129891993494
-                      ],
-                      [
-                        -0.09029388427734374,
-                        51.51325627671818
-                      ],
-                      [
-                        -0.09162425994873047,
-                        51.51365688983539
-                      ],
-                      [
-                        -0.0960874557495117,
-                        51.51456493319091
-                      ],
-                      [
-                        -0.09724617004394531,
-                        51.514992241447835
-                      ],
-                      [
-                        -0.0972890853881836,
-                        51.51568660881589
-                      ],
-                      [
-                        -0.09552955627441406,
-                        51.51571331504175
-                      ],
-                      [
-                        -0.09514331817626952,
-                        51.51555307745177
-                      ],
-                      [
-                        -0.09514331817626952,
-                        51.51555307745177
-                      ]
-                    ]
-                  ]
-                },
-                "type": "Feature",
-                "properties": {
-                  "areatype": "project",
-                  "author": "ufeusr1",
-                  "color": "#071ac8",
-                  "diagramid": 5,
-                  "sysid": 1,
-                  "systag": "Small buildings, low density housing"
-                }
-              }
-            ]
-          },
-          "sysid": 1,
-          "rank": 1,
-          "id": 1,
-          "description": "testing"
-        }
-
-## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
-
-### Get details last modified timestamp of a diagram [GET]
-Returns the a hash of the last modified date, can be used to see if a diagram has changed from the last time it was accessed.
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-        {
-          "changehash": "57266cf8"
-        }
-
-
-## All Diagrams Details [/projects/{projectid}/diagrams/all/]
-<<<<<<< HEAD
-=======
-
-### Get details of all diagrams  [GET]
-Returns the a list of Diagram geometries and properties for all the diagrams in the project. 
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-
-
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-        [
-           {
-              "geojson":{
-                 "type":"FeatureCollection",
-                 "features":[
-                    {
-                       "geometry":{
-                          "type":"Polygon",
-                          "coordinates":[
-                             [
-                                [
-                                   -43.18176269531249,
-                                   -19.65552077552001
-                                ],
-                                [
-                                   -43.14605712890625,
-                                   -19.663280219987648
-                                ],
-                                [
-                                   -43.20098876953125,
-                                   -19.810638182504178
-                                ],
-                                [
-                                   -43.253173828125,
-                                   -19.859727234743332
-                                ],
-                                [
-                                   -43.31085205078125,
-                                   -19.867476750284446
-                                ],
-                                [
-                                   -43.406982421875,
-                                   -19.84422706794513
-                                ],
-                                [
-                                   -43.58001708984375,
-                                   -19.9526963975442
-                                ],
-                                [
-                                   -43.6431884765625,
-                                   -19.970767385432207
-                                ],
-                                [
-                                   -43.76678466796874,
-                                   -19.955278093975554
-                                ],
-                                [
-                                   -43.80523681640625,
-                                   -19.93462334027723
-                                ],
-                                [
-                                   -43.78875732421875,
-                                   -19.82355782477137
-                                ],
-                                [
-                                   -43.70361328125,
-                                   -19.756364230752375
-                                ],
-                                [
-                                   -43.62945556640625,
-                                   -19.722756810828184
-                                ],
-                                [
-                                   -43.32733154296875,
-                                   -19.642587534013032
-                                ],
-                                [
-                                   -43.18176269531249,
-                                   -19.65552077552001
-                                ],
-                                [
-                                   -43.18176269531249,
-                                   -19.65552077552001
-                                ]
-                             ]
-                          ]
-                       },
-                       "type":"Feature",
-                       "properties":{
-                          "areatype":"project",
-                          "author":"ufeusr1",
-                          "color":"#fc1999",
-                          "diagramid":60,
-                          "sysid":4
-                       }
-                    },
-                    {
-                       "geometry":{
-                          "type":"Polygon",
-                          "coordinates":[
-                             [
-                                [
-                                   -43.143310546875,
-                                   -19.663280219987648
-                                ],
-                                [
-                                   -43.1982421875,
-                                   -19.813222194938493
-                                ],
-                                [
-                                   -43.253173828125,
-                                   -19.859727234743332
-                                ],
-                                [
-                                   -43.30810546875,
-                                   -19.87005983797395
-                                ],
-                                [
-                                   -43.406982421875,
-                                   -19.84422706794513
-                                ],
-                                [
-                                   -43.5772705078125,
-                                   -19.9526963975442
-                                ],
-                                [
-                                   -43.6431884765625,
-                                   -19.973348786110602
-                                ],
-                                [
-                                   -43.7640380859375,
-                                   -19.95785974817016
-                                ],
-                                [
-                                   -43.802490234375,
-                                   -19.937205332238577
-                                ],
-                                [
-                                   -43.78601074218749,
-                                   -19.82355782477137
-                                ],
-                                [
-                                   -43.70361328125,
-                                   -19.756364230752375
-                                ],
-                                [
-                                   -43.3245849609375,
-                                   -19.642587534013032
-                                ],
-                                [
-                                   -43.143310546875,
-                                   -19.663280219987648
-                                ],
-                                [
-                                   -43.143310546875,
-                                   -19.663280219987648
-                                ]
-                             ]
-                          ]
-                       },
-                       "type":"Feature",
-                       "properties":{
-                          "areatype":"project",
-                          "author":"ufeusr1",
-                          "color":"#fc1999",
-                          "diagramid":60,
-                          "sysid":4
-                       }
-                    },
-                    {
-                       "geometry":{
-                          "type":"Polygon",
-                          "coordinates":[
-                             [
-                                [
-                                   -43.681640625,
-                                   -19.259294140463897
-                                ],
-                                [
-                                   -43.5992431640625,
-                                   -19.31632737314115
-                                ],
-                                [
-                                   -43.61572265625,
-                                   -19.38888634723281
-                                ],
-                                [
-                                   -43.758544921875,
-                                   -19.48730751856426
-                                ],
-                                [
-                                   -43.8409423828125,
-                                   -19.492485926182777
-                                ],
-                                [
-                                   -43.87939453125,
-                                   -19.4769502064884
-                                ],
-                                [
-                                   -43.912353515625,
-                                   -19.430334111637887
-                                ],
-                                [
-                                   -43.92333984375,
-                                   -19.33706180106996
-                                ],
-                                [
-                                   -43.8958740234375,
-                                   -19.23854986079739
-                                ],
-                                [
-                                   -43.846435546875,
-                                   -19.186677697957833
-                                ],
-                                [
-                                   -43.736572265625,
-                                   -19.171112859781445
-                                ],
-                                [
-                                   -43.681640625,
-                                   -19.259294140463897
-                                ],
-                                [
-                                   -43.681640625,
-                                   -19.259294140463897
-                                ]
-                             ]
-                          ]
-                       },
-                       "type":"Feature",
-                       "properties":{
-                          "areatype":"project",
-                          "author":"ufeusr1",
-                          "color":"#fc1999",
-                          "diagramid":60,
-                          "sysid":4
-                       }
-                    }
-                 ]
-              },
-              "sysid":4,
-              "rank":1,
-              "id":1,
-              "description":"get"
-           },
-           {
-              "geojson":{
-                 "type":"FeatureCollection",
-                 "features":[
-                    {
-                       "geometry":{
-                          "type":"Polygon",
-                          "coordinates":[
-                             [
-                                [
-                                   -43.18176269531249,
-                                   -19.65552077552001
-                                ],
-                                [
-                                   -43.14605712890625,
-                                   -19.663280219987648
-                                ],
-                                [
-                                   -43.20098876953125,
-                                   -19.810638182504178
-                                ],
-                                [
-                                   -43.253173828125,
-                                   -19.859727234743332
-                                ],
-                                [
-                                   -43.31085205078125,
-                                   -19.867476750284446
-                                ],
-                                [
-                                   -43.406982421875,
-                                   -19.84422706794513
-                                ],
-                                [
-                                   -43.58001708984375,
-                                   -19.9526963975442
-                                ],
-                                [
-                                   -43.6431884765625,
-                                   -19.970767385432207
-                                ],
-                                [
-                                   -43.76678466796874,
-                                   -19.955278093975554
-                                ],
-                                [
-                                   -43.80523681640625,
-                                   -19.93462334027723
-                                ],
-                                [
-                                   -43.78875732421875,
-                                   -19.82355782477137
-                                ],
-                                [
-                                   -43.70361328125,
-                                   -19.756364230752375
-                                ],
-                                [
-                                   -43.62945556640625,
-                                   -19.722756810828184
-                                ],
-                                [
-                                   -43.32733154296875,
-                                   -19.642587534013032
-                                ],
-                                [
-                                   -43.18176269531249,
-                                   -19.65552077552001
-                                ],
-                                [
-                                   -43.18176269531249,
-                                   -19.65552077552001
-                                ]
-                             ]
-                          ]
-                       },
-                       "type":"Feature",
-                       "properties":{
-                          "areatype":"project",
-                          "author":"ufeusr1",
-                          "color":"#fc1999",
-                          "diagramid":61,
-                          "sysid":4
-                       }
-                    }
-                 ]
-              },
-              "sysid":4,
-              "rank":2,
-              "id":2,
-              "description":"ge-t"
-           }
-        ]
-
-## User Diagrams selections [/projects/{projectid}/members/{username}/diagrams/]
->>>>>>> origin/master
-
-### Get details of all diagrams  [GET]
+### Get details of all diagrams [GET]
 Returns the a list of Diagram geometries and properties for all the diagrams in the project. 
 
 + Parameters
@@ -1281,7 +775,164 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "description": "new project"
               }
             ]
-## User Diagrams selections [/projects/{projectid}/members/{username}/diagrams/]
+            
+## Diagram Detail [/projects/{projectid}/diagrams/{diagramid}/]
+
+### Get details of a diagram [GET]
+Returns the a GeoJSON feature collection geometry of the diagram that is passed in the diagram ID.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "geojson": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "geometry": {
+                  "type": "Polygon",
+                  "coordinates": [
+                    [
+                      [
+                        -0.09514331817626952,
+                        51.51555307745177
+                      ],
+                      [
+                        -0.09394168853759766,
+                        51.51523260058079
+                      ],
+                      [
+                        -0.08668899536132812,
+                        51.51549966479653
+                      ],
+                      [
+                        -0.0856161117553711,
+                        51.515659902574384
+                      ],
+                      [
+                        -0.08085250854492186,
+                        51.51547295844541
+                      ],
+                      [
+                        -0.08020877838134766,
+                        51.51531272000991
+                      ],
+                      [
+                        -0.07797718048095703,
+                        51.51437798456801
+                      ],
+                      [
+                        -0.07746219635009766,
+                        51.51395067054886
+                      ],
+                      [
+                        -0.07741928100585936,
+                        51.51352335252112
+                      ],
+                      [
+                        -0.07784843444824219,
+                        51.5129891993494
+                      ],
+                      [
+                        -0.07973670959472656,
+                        51.51280224425956
+                      ],
+                      [
+                        -0.0832986831665039,
+                        51.51309603048481
+                      ],
+                      [
+                        -0.08703231811523438,
+                        51.51309603048481
+                      ],
+                      [
+                        -0.08870601654052734,
+                        51.5129891993494
+                      ],
+                      [
+                        -0.09029388427734374,
+                        51.51325627671818
+                      ],
+                      [
+                        -0.09162425994873047,
+                        51.51365688983539
+                      ],
+                      [
+                        -0.0960874557495117,
+                        51.51456493319091
+                      ],
+                      [
+                        -0.09724617004394531,
+                        51.514992241447835
+                      ],
+                      [
+                        -0.0972890853881836,
+                        51.51568660881589
+                      ],
+                      [
+                        -0.09552955627441406,
+                        51.51571331504175
+                      ],
+                      [
+                        -0.09514331817626952,
+                        51.51555307745177
+                      ],
+                      [
+                        -0.09514331817626952,
+                        51.51555307745177
+                      ]
+                    ]
+                  ]
+                },
+                "type": "Feature",
+                "properties": {
+                  "areatype": "project",
+                  "author": "ufeusr1",
+                  "color": "#071ac8",
+                  "diagramid": 5,
+                  "sysid": 1,
+                  "systag": "Small buildings, low density housing"
+                }
+              }
+            ]
+          },
+          "sysid": 1,
+          "rank": 1,
+          "type": "policy",
+          "id": 1,
+          "description": "Forest areas to be protected"
+        }
+
+## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
+
+### Get details last modified timestamp of a diagram [GET]
+Returns the a hash of the last modified date, can be used to see if a diagram has changed from the last time it was accessed.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "changehash": "57266cf8"
+        }
+
+
+## User Diagrams Selections [/projects/{projectid}/members/{username}/diagrams/]
 
 ### Get details diagrams selected by a user [GET]
 Returns the geometry of the diagrams selected by the user for the particular project. The user has to be a member of the project.
@@ -1522,7 +1173,7 @@ Resources related to systems within a project on Geodesign Hub.
 
 ## Systems Collection [/projects/{projectid}/systems/]
 
-### List project systems  [GET]
+### List project systems [GET]
 Returns all the system details for the project with ID and system name.
 
 + Parameters
@@ -1571,144 +1222,33 @@ Returns the details of that system such as system name, type, etc.
 
         {
           "id": 1,
-          "sysname": "Sys 1",
-          "sysclass": "Attractiveness"
+          "sysname": "LDH",
+          "syscolor": "#071ac8"
         }
-        
-## Add Project Diagram to System [/projects/{projectid}/systems/{sysid}/add/project/]
 
-### Add a Project Diagram [POST]
-Add a new diagram to a system
 
+## System Diagrams [/projects/{projectid}/systems/{sysid}/diagrams/]
+
+### Get system diagrams [GET]
+Returns the IDs of all the diagrams contained in that system
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
     + sysid: 23 (integer) - The ID of the system in the form of an integer
 
-
-+ Request (application/json)
-
-        {
-            "geometry": {
-                  "type": "FeatureCollection",
-                  "features": [
-                    {
-                      "type": "Feature",
-                      "properties": {},
-                      "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [
-                          [
-                            [
-                              -0.09307265281677245,
-                              51.516194024429446
-                            ],
-                            [
-                              -0.09310483932495117,
-                              51.51524595382876
-                            ],
-                            [
-                              -0.09136676788330077,
-                              51.51502562473659
-                            ],
-                            [
-                              -0.09100198745727538,
-                              51.515639872882986
-                            ],
-                            [
-                              -0.09152770042419434,
-                              51.51636093622468
-                            ],
-                            [
-                              -0.09307265281677245,
-                              51.51622740683744
-                            ],
-                            [
-                              -0.09307265281677245,
-                              51.516194024429446
-                            ]
-                          ]
-                        ]
-                      }
-                    }
-                  ]
-                },
-            "featuretype": "polygon"
-            "description": "A new shopping mall"
-        }
-        
 + Response 200 (application/json)
 
         {
-            "msg":"Diagram successfully Added"}
+          "diagrams": [
+            5,
+            7,
+            13,
+            15,
+            18
+          ]
         }
-## Add Policy Diagram to System [/projects/{projectid}/systems/{sysid}/add/policy/]
-
-### Add a Policy Diagram [POST]
-Add a new diagram to a system
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a policy in the form of an string
-    + sysid: 23 (integer) - The ID of the system in the form of an integer
-
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Request (application/json)
-
-        {
-            "geometry": {
-                  "type": "FeatureCollection",
-                  "features": [
-                    {
-                      "type": "Feature",
-                      "properties": {},
-                      "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [
-                          [
-                            [
-                              -0.10273933410644531,
-                              51.5111730317151
-                            ],
-                            [
-                              -0.10273933410644531,
-                              51.523003529077705
-                            ],
-                            [
-                              -0.08351325988769531,
-                              51.523003529077705
-                            ],
-                            [
-                              -0.08351325988769531,
-                              51.5111730317151
-                            ],
-                            [
-                              -0.10273933410644531,
-                              51.5111730317151
-                            ]
-                          ]
-                        ]
-                      }
-                    }
-                  ]
-                },
-            "featuretype": "polygon"
-            "description": "Low taxation policy"
-        }
-        
-+ Response 200 (application/json)
-
-        {
-            "msg":"Diagram successfully Added"}
-        }
-
-
 ## System Evaluation [/projects/{projectid}/systems/{sysid}/evaluation/]
 
-### Get System Evaluation Geometry [GET]
+### Get system evaluation [GET]
 Returns a GeoJSON feature collection for the evaluation map for this system.
 
 + Parameters
@@ -1983,9 +1523,140 @@ Returns a GeoJSON feature collection for the evaluation map for this system.
         }
 
 
-## Add Evaluation map to a System [/projects/{projectid}/systems/{sysid}/e/map/json/{username}/]
+## Add Project Diagram to System [/projects/{projectid}/systems/{sysid}/add/project/]
 
-### Add Evaluation Map for a User [POST]
+### Add a project diagram [POST]
+Add a new diagram to a system
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + sysid: 23 (integer) - The ID of the system in the form of an integer
+
+
++ Request (application/json)
+
+        {
+            "geometry": {
+                  "type": "FeatureCollection",
+                  "features": [
+                    {
+                      "type": "Feature",
+                      "properties": {},
+                      "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                          [
+                            [
+                              -0.09307265281677245,
+                              51.516194024429446
+                            ],
+                            [
+                              -0.09310483932495117,
+                              51.51524595382876
+                            ],
+                            [
+                              -0.09136676788330077,
+                              51.51502562473659
+                            ],
+                            [
+                              -0.09100198745727538,
+                              51.515639872882986
+                            ],
+                            [
+                              -0.09152770042419434,
+                              51.51636093622468
+                            ],
+                            [
+                              -0.09307265281677245,
+                              51.51622740683744
+                            ],
+                            [
+                              -0.09307265281677245,
+                              51.516194024429446
+                            ]
+                          ]
+                        ]
+                      }
+                    }
+                  ]
+                },
+            "featuretype": "polygon"
+            "description": "A new shopping mall"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "msg":"Diagram successfully Added"}
+        }
+## Add Policy Diagram to System [/projects/{projectid}/systems/{sysid}/add/policy/]
+
+### Add a policy diagram [POST]
+Add a new diagram to a system
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a policy in the form of an string
+    + sysid: 23 (integer) - The ID of the system in the form of an integer
+
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Request (application/json)
+
+        {
+            "geometry": {
+                  "type": "FeatureCollection",
+                  "features": [
+                    {
+                      "type": "Feature",
+                      "properties": {},
+                      "geometry": {
+                        "type": "Polygon",
+                        "coordinates": [
+                          [
+                            [
+                              -0.10273933410644531,
+                              51.5111730317151
+                            ],
+                            [
+                              -0.10273933410644531,
+                              51.523003529077705
+                            ],
+                            [
+                              -0.08351325988769531,
+                              51.523003529077705
+                            ],
+                            [
+                              -0.08351325988769531,
+                              51.5111730317151
+                            ],
+                            [
+                              -0.10273933410644531,
+                              51.5111730317151
+                            ]
+                          ]
+                        ]
+                      }
+                    }
+                  ]
+                },
+            "featuretype": "polygon"
+            "description": "Low taxation policy"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "msg":"Diagram successfully Added"}
+        }
+
+
+## Add Evaluation Map to a System [/projects/{projectid}/systems/{sysid}/e/map/json/{username}/]
+
+### Add evaluation map for a user [POST]
 A geoJSON object that has the updated JSON layer of either evaluation or impact data submitted to the user
 
 + Parameters
@@ -2055,9 +1726,9 @@ A geoJSON object that has the updated JSON layer of either evaluation or impact 
         }
 
 
-## Add Impact map to a System [/projects/{projectid}/systems/{sysid}/i/map/json/{username}/]
+## Add Impact Map to a System [/projects/{projectid}/systems/{sysid}/i/map/json/{username}/]
 
-### Add a Impact Map for a User [POST]
+### Add a impact map for a user [POST]
 A geoJSON object that has the updated JSON layer of either evaluation or impact data submitted to the user
 
 + Parameters
@@ -2126,9 +1797,9 @@ A geoJSON object that has the updated JSON layer of either evaluation or impact 
             "msg":"Data successfully posted to users."}
         }
 
-## User System Diagram selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/]
+## User System Diagram Selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/]
 
-### Get geometry of diagrams selected in a system by user [GET]
+### Get diagrams selected in a system by user [GET]
 Returns the geometry of the diagrams selected by the user for the particular project and a specific system. 
 
 + Parameters
@@ -2323,9 +1994,9 @@ Returns the geometry of the diagrams selected by the user for the particular pro
               ]
             }
 
-## User System Projects Diagram selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/projects/]
+## User System Projects Diagram Selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/projects/]
 
-### Get geometries of project diagrams selected in a system by user [GET]
+### Get project diagrams selected in a system by user [GET]
 Returns the geometry only of project diagrams selected by the user for the particular project and a specific system. 
 
 + Parameters
@@ -2451,7 +2122,7 @@ Returns the geometry only of project diagrams selected by the user for the parti
         }
 
 
-## User System Policies Diagram selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/policies/]
+## User System Policies Diagram Selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/policies/]
 
 ### Get geometries of policy diagrams selected in a system by user [GET]
 Returns the geometry only of policy diagrams selected by the user for the particular project and a specific system. 
@@ -2550,7 +2221,7 @@ A set of resources related to Change teams within a Geodesign Hub Project
 
 ## Change Team Collection [/projects/{projectid}/cteams/]
 
-### List all change teams   [GET]
+### List all change teams [GET]
 Return all the change teams for that project.
 
 + Parameters
@@ -2578,7 +2249,7 @@ Return all the change teams for that project.
 
 ## Change Team Detail [/projects/{projectid}/cteams/{cteamid}/]
 
-### List designs of a Change team  [GET]
+### List designs of a change team [GET]
 Returns a list of synthesis created by this change team
 
 + Parameters
@@ -2645,7 +2316,7 @@ Returns a list of synthesis created by this change team
 
 ## Change Team Members [/projects/{projectid}/cteams/{cteamid}/members/]
 
-### List members of a changeteam  [GET]
+### List members of a change team  [GET]
 Returns a list of usernames of users who are members of this change team.
     
 + Request
@@ -2669,7 +2340,7 @@ Returns a list of usernames of users who are members of this change team.
 
 ## Change Team Design Synthesis [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/]
 
-### Get Design Synthesis  [GET]
+### Get design synthesis [GET]
 Returns a GeoJSON feature collection object of the synthesis that is saved.
 
 + Parameters
@@ -2800,12 +2471,13 @@ Returns a GeoJSON feature collection object of the synthesis that is saved.
 
 ## Change Team Synthesis Diagrams [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/diagrams/]
 
-### List diagrams in a synthesis  [GET]
+### List diagrams in a synthesis [GET]
 Returns a list of diagram IDs in the selected synthesis.
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
     + cteamid: 12 (integer) - The ID of the change team in the form of an integer
+    + synthesisid: 2G638FLMLJEGF706 (string) - The ID of a synthesis in the form of a string
     
 + Request
     + Headers
@@ -2827,9 +2499,9 @@ Returns a list of diagram IDs in the selected synthesis.
         }
                 
 
-## Change Team Design Synthesis Policies [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/projects/]
+## Change Team Synthesis Policies [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/projects/]
 
-### Get Policy Diagrams from Synthesized Design [GET]
+### Get policy diagrams from design [GET]
 Returns a GeoJSON feature collection object of the all the policy diagrams in the synthesis that is saved.
 
 + Parameters
@@ -2957,9 +2629,9 @@ Returns a GeoJSON feature collection object of the all the policy diagrams in th
           ]
         }
 
-## Change Team Design Synthesis Projects by System [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/systems/{sysid}/projects/]
+## Change Team Synthesis Projects by System [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/systems/{sysid}/projects/]
 
-### Get Policy Diagrams filtered by system from Synthesized Design [GET]
+### Get project diagrams filtered by system from design [GET]
 Returns a GeoJSON feature collection object of of the all the project diagrams for the given system in the saved synthesis.
 
 + Parameters
@@ -3045,9 +2717,9 @@ Returns a GeoJSON feature collection object of of the all the project diagrams f
         }
         
 
-## Change Team Design Synthesis Projects by System [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/systems/{sysid}/policies/]
+## Change Team Synthesis Projects by System [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/systems/{sysid}/policies/]
 
-### Get Policy Diagrams filtered by system from Synthesized Design [GET]
+### Get policy diagrams filtered by system from design [GET]
 Returns a GeoJSON feature collection object of of the all the policy diagrams for the given system in the saved synthesis.
 
 + Parameters
