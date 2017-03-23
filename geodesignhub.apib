@@ -207,7 +207,10 @@ Returns a GeoJSON geometry of constraints set within the project area.
           "sysid": 1,
           "rank": 0,
           "id": 0,
-          "description": "No Description Added. Please add one."
+          "description": "No Description Added. Please add one.",
+          "infourl": "",
+          "length": 0,
+          "area": 16791.702
         }
 
 ## Project Boundaries [/projects/{projectid}/boundaries/]
@@ -296,6 +299,9 @@ Returns a GeoJSON geometry of the first boundary set within the project area.
           "rank": 0,
           "id": 0,
           "description": "No Description Added. Please add one."
+          "infourl": "",
+          "length": 0,
+          "area": 16791.702
         }
 
 ## Project Second Boundaries [/projects/{projectid}/secondboundaries/]
@@ -401,6 +407,9 @@ Returns a GeoJSON geometry of second boundaries set within the project area. (Up
               "rank": 0,
               "id": 0,
               "description": "No Description Added. Please add one."
+              "infourl": "",
+              "length": 0,
+              "area": 16791.702
             }
 
 
@@ -618,7 +627,10 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "sysid": 1,
                 "rank": 1,
                 "id": 1,
-                "description": "testing"
+                "description": "testing",
+                "infourl": "",
+                "length": 0,
+                "area": 16791.702
               },
               {
                 "geojson": {
@@ -703,7 +715,10 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "sysid": 1,
                 "rank": 2,
                 "id": 2,
-                "description": "new polciy"
+                "description": "new polciy",
+                "infourl": "",
+                "length": 0,
+                "area": 16791.702
               },
               {
                 "geojson": {
@@ -772,7 +787,10 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "sysid": 2,
                 "rank": 1,
                 "id": 1,
-                "description": "new project"
+                "description": "new project",
+                "infourl": "",
+                "length": 0,
+                "area": 16791.702
               }
             ]
             
@@ -908,7 +926,10 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
           "rank": 1,
           "type": "policy",
           "id": 1,
-          "description": "Forest areas to be protected"
+          "infourl":"https://community.geodesignhub.com/t/more-information-about-university-location/104"
+          "description": "Forest areas to be protected",
+          "length": 0,
+          "area": 16791.702
         }
 
 ## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
@@ -1226,7 +1247,8 @@ Returns the details of that system such as system name, type, etc.
           "id": 1,
           "sysname": "LDH",
           "syscolor": "#071ac8",
-          "systag": "SMB"
+          "systag": "SMB",
+          "syscost": 100000
         }
 
 
@@ -2336,6 +2358,38 @@ Returns a list of usernames of users who are members of this change team.
         {
           "members": [
             "ufeusr1"
+          ]
+        }
+        
+
+## Change Team Priorities [/projects/{projectid}/cteams/{cteamid}/priorities/]
+
+### List change team priorities  [GET]
+Returns a object that details the system priorities and rank for this change team.
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + cteamid: 12 (integer) - The ID of the change team in the form of an integer
+
++ Response 200 (application/json)
+
+        {
+          "priorities": [
+            {
+              "sysid": "1",
+              "pref": "10",
+              "rank": 1
+            },
+            {
+              "sysid": "2",
+              "pref": "6",
+              "rank": 2
+            }
           ]
         }
         
