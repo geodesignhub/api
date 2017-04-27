@@ -2526,6 +2526,52 @@ Returns a GeoJSON feature collection object of the synthesis that is saved.
         }
 
 
+## Change Team Synthesis Timeline [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/timeline/]
+
+### Get start and end time of diagrams [GET]
+Returns the start and end time of diagrams (if set) at the time of saving a design.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + cteamid: 12 (integer) - The ID of the change team in the form of an integer
+    + synthesisid: 2G638FLMLJEGF706 (string) - The ID of a synthesis in the form of a string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "timeline": {
+            "6": {
+              "start": "2016-11-15",
+              "end": "2017-11-15"
+            },
+            "7": {
+              "start": "2021-11-15",
+              "end": "2022-11-15"
+            },
+            "8": {
+              "start": "2021-11-15",
+              "end": "2022-11-15"
+            },
+            "14": {
+              "start": "2016-11-15",
+              "end": "2017-11-15"
+            },
+            "15": {
+              "start": "2016-11-15",
+              "end": "2017-11-15"
+            },
+            "66": {
+              "start": "2021-09-30",
+              "end": "2022-09-30"
+            }
+          }
+        }
+
 ## Change Team Synthesis Diagrams [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/diagrams/]
 
 ### List diagrams in a synthesis [GET]
