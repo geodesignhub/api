@@ -122,7 +122,27 @@ Returns a string with bounding box for the project study area coordinates in a `
         {
           "bounds": "-0.11569976806640624,51.49624032118747,-0.06420135498046875,51.52829020697338"
         }
-        
+
+## Project Study Area Center [/projects/{projectid}/center/]
+
+### Get project center  [GET]
+Returns a string with center of the study area in `latitude,longitude` format. 
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "center": "-0.1567,51.5041"
+        }
+
+                
 ## Project Constraints [/projects/{projectid}/constraints/]
 
 ### Get project constraints [GET]
