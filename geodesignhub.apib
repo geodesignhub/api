@@ -249,78 +249,84 @@ Returns a GeoJSON geometry of the first boundary set within the project area.
 + Response 200 (application/json)
 
         {
-          "geojson": {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "geometry": {
-                  "type": "Polygon",
-                  "coordinates": [
-                    [
-                      [
-                        -0.13458251953125,
-                        51.49891200625809
-                      ],
-                      [
-                        -0.11260986328124999,
-                        51.48651406499528
-                      ],
-                      [
-                        -0.1702880859375,
-                        51.473257364513714
-                      ],
-                      [
-                        -0.1847076416015625,
-                        51.46812470399791
-                      ],
-                      [
-                        -0.17990112304687497,
-                        51.50062180251775
-                      ],
-                      [
-                        -0.18745422363281247,
-                        51.5091698216777
-                      ],
-                      [
-                        -0.1888275146484375,
-                        51.5177162373547
-                      ],
-                      [
-                        -0.17852783203125,
-                        51.52327054772943
-                      ],
-                      [
-                        -0.17234802246093747,
-                        51.52327054772943
-                      ],
-                      [
-                        -0.13458251953125,
-                        51.49891200625809
-                      ],
-                      [
-                        -0.13458251953125,
-                        51.49891200625809
-                      ]
-                    ]
-                  ]
-                },
-                "type": "Feature",
-                "properties": {
-                  "areatype": "constraints",
-                  "author": "ufeusr1",
-                  "color": "#343434",
-                  "diagramid": 2,
-                  "sysid": 1
-                }
-              }
-            ]
-          },
-          "sysid": 1,
-          "rank": 0,
-          "id": 0,
-          "description": "No Description Added. Please add one."
-          "length": 0,
-          "area": 16791.702
+            "geojson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "bname": "Boundary 1",
+                            "areatype": "boundaries",
+                            "color": "#a6cee3",
+                            "author": "ufeusr1"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        38.989019,
+                                        37.180636
+                                    ],
+                                    [
+                                        38.989191,
+                                        37.166958
+                                    ],
+                                    [
+                                        39.004469,
+                                        37.166411
+                                    ],
+                                    [
+                                        39.006529,
+                                        37.182414
+                                    ],
+                                    [
+                                        38.989019,
+                                        37.180636
+                                    ]
+                                ]
+                            ],
+                            "type": "Polygon"
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "bname": "Boundary 1",
+                            "areatype": "boundaries",
+                            "color": "#a6cee3",
+                            "author": "ufeusr1"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        39.013395,
+                                        37.182277
+                                    ],
+                                    [
+                                        39.011679,
+                                        37.166
+                                    ],
+                                    [
+                                        39.032106,
+                                        37.167368
+                                    ],
+                                    [
+                                        39.03039,
+                                        37.18214
+                                    ],
+                                    [
+                                        39.013395,
+                                        37.182277
+                                    ]
+                                ]
+                            ],
+                            "type": "Polygon"
+                        }
+                    }
+                ]
+            },
+            "description": "First Boundaries"
         }
 
 ## Project Second Boundaries [/projects/{projectid}/secondboundaries/]
@@ -338,97 +344,86 @@ Returns a GeoJSON geometry of second boundaries set within the project area. (Up
             
 + Response 200 (application/json)
 
-            {
-              "geojson": {
+        {
+            "geojson": {
                 "type": "FeatureCollection",
                 "features": [
-                  {
-                    "geometry": {
-                      "type": "Polygon",
-                      "coordinates": [
-                        [
-                          [
-                            -0.07553100585937499,
-                            51.536085601784755
-                          ],
-                          [
-                            -0.042572021484375,
-                            51.52156160130253
-                          ],
-                          [
-                            -0.0336456298828125,
-                            51.51344322994464
-                          ],
-                          [
-                            -0.030212402343749997,
-                            51.50660558430045
-                          ],
-                          [
-                            -0.0308990478515625,
-                            51.49848454717058
-                          ],
-                          [
-                            -0.034332275390625,
-                            51.49677467073
-                          ],
-                          [
-                            -0.1174163818359375,
-                            51.49634719159713
-                          ],
-                          [
-                            -0.1531219482421875,
-                            51.49335472541077
-                          ],
-                          [
-                            -0.1737213134765625,
-                            51.48993452350154
-                          ],
-                          [
-                            -0.1393890380859375,
-                            51.512588580360244
-                          ],
-                          [
-                            -0.10505676269531249,
-                            51.53138716746968
-                          ],
-                          [
-                            -0.0926971435546875,
-                            51.536512708129735
-                          ],
-                          [
-                            -0.0803375244140625,
-                            51.53950234032649
-                          ],
-                          [
-                            -0.07553100585937499,
-                            51.536085601784755
-                          ],
-                          [
-                            -0.07553100585937499,
-                            51.536085601784755
-                          ]
-                        ]
-                      ]
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "bname": "Boundary 1",
+                            "areatype": "boundaries",
+                            "color": "#a6cee3",
+                            "author": "ufeusr1"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        38.989019,
+                                        37.180636
+                                    ],
+                                    [
+                                        38.989191,
+                                        37.166958
+                                    ],
+                                    [
+                                        39.004469,
+                                        37.166411
+                                    ],
+                                    [
+                                        39.006529,
+                                        37.182414
+                                    ],
+                                    [
+                                        38.989019,
+                                        37.180636
+                                    ]
+                                ]
+                            ],
+                            "type": "Polygon"
+                        }
                     },
-                    "type": "Feature",
-                    "properties": {
-                      "areatype": "boundaries2",
-                      "author": "ufeusr1",
-                      "color": "#b2df8a",
-                      "diagramid": 4,
-                      "sysid": 1,
-                      "bname": "Boundary 1"
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "bname": "Boundary 1",
+                            "areatype": "boundaries",
+                            "color": "#a6cee3",
+                            "author": "ufeusr1"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        39.013395,
+                                        37.182277
+                                    ],
+                                    [
+                                        39.011679,
+                                        37.166
+                                    ],
+                                    [
+                                        39.032106,
+                                        37.167368
+                                    ],
+                                    [
+                                        39.03039,
+                                        37.18214
+                                    ],
+                                    [
+                                        39.013395,
+                                        37.182277
+                                    ]
+                                ]
+                            ],
+                            "type": "Polygon"
+                        }
                     }
-                  }
                 ]
-              },
-              "sysid": 1,
-              "rank": 0,
-              "id": 0,
-              "description": "No Description Added. Please add one."
-              "length": 0,
-              "area": 16791.702
-            }
+            },
+            "description": "Second Boundaries"
+        }
 
 
 ## Group Diagrams API
