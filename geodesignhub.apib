@@ -2418,119 +2418,95 @@ Returns a GeoJSON feature collection object of the synthesis that is saved.
 + Response 200 (application/json)
 
         {
-          "type": "FeatureCollection",
-          "features": [
-            {
-              "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                  [
-                    [
-                      -0.09514331817626952,
-                      51.51555307745177
-                    ],
-                    [
-                      -0.09394168853759766,
-                      51.51523260058079
-                    ],
-                    [
-                      -0.08668899536132812,
-                      51.51549966479653
-                    ],
-                    [
-                      -0.0856161117553711,
-                      51.515659902574384
-                    ],
-                    [
-                      -0.08085250854492186,
-                      51.51547295844541
-                    ],
-                    [
-                      -0.08020877838134766,
-                      51.51531272000991
-                    ],
-                    [
-                      -0.07797718048095703,
-                      51.51437798456801
-                    ],
-                    [
-                      -0.07746219635009766,
-                      51.51395067054886
-                    ],
-                    [
-                      -0.07741928100585936,
-                      51.51352335252112
-                    ],
-                    [
-                      -0.07784843444824219,
-                      51.5129891993494
-                    ],
-                    [
-                      -0.07973670959472656,
-                      51.51280224425956
-                    ],
-                    [
-                      -0.0832986831665039,
-                      51.51309603048481
-                    ],
-                    [
-                      -0.08703231811523438,
-                      51.51309603048481
-                    ],
-                    [
-                      -0.08870601654052734,
-                      51.5129891993494
-                    ],
-                    [
-                      -0.09029388427734374,
-                      51.51325627671818
-                    ],
-                    [
-                      -0.09162425994873047,
-                      51.51365688983539
-                    ],
-                    [
-                      -0.0960874557495117,
-                      51.51456493319091
-                    ],
-                    [
-                      -0.09724617004394531,
-                      51.514992241447835
-                    ],
-                    [
-                      -0.0972890853881836,
-                      51.51568660881589
-                    ],
-                    [
-                      -0.09552955627441406,
-                      51.51571331504175
-                    ],
-                    [
-                      -0.09514331817626952,
-                      51.51555307745177
-                    ],
-                    [
-                      -0.09514331817626952,
-                      51.51555307745177
-                    ]
-                  ]
-                ]
-              },
-              "type": "Feature",
-              "properties": {
-                "areatype": "project",
-                "diagramtype": "project",
-                "fundingtype": "other",
-                "cost_override": "0",
-                "cost_override_type": "total",
-                "author": "ufeusr1",
-                "color": "#071ac8",
-                "diagramid": 5,
-                "description": "testing",
-                "systag": "Small buildings, low density housing"
-              }
-            }
-          ]
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "new polygon",
+                        "author": "ufeusr1",
+                        "diagramid": 31,
+                        "systag": "Small buildings, low density housing",
+                        "sysname": "LDH",
+                        "areatype": "project",
+                        "diagramtype": "project",
+                        "fundingtype": "public",
+                        "cost_override": 0,
+                        "cost_override_type": "per hectare.",
+                        "color": "#ffcc00"
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            [
+                                [
+                                    -6.264439,
+                                    53.332213
+                                ],
+                                [
+                                    -6.263838,
+                                    53.328984
+                                ],
+                                [
+                                    -6.251392,
+                                    53.327241
+                                ],
+                                [
+                                    -6.241865,
+                                    53.332354
+                                ],
+                                [
+                                    -6.256371,
+                                    53.338402
+                                ],
+                                [
+                                    -6.264439,
+                                    53.332213
+                                ]
+                            ]
+                        ],
+                        "type": "Polygon"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "description": "AG Numeric",
+                        "author": "ufeusr1",
+                        "diagramid": 61,
+                        "systag": "Agriculture, Forestry",
+                        "sysname": "AG",
+                        "areatype": "project",
+                        "diagramtype": "project",
+                        "fundingtype": "public",
+                        "cost_override": 100,
+                        "cost_override_type": "total",
+                        "color": "#C2E699"
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            [
+                                [
+                                    -6.252637,
+                                    53.329628
+                                ],
+                                [
+                                    -6.261048,
+                                    53.331012
+                                ],
+                                [
+                                    -6.240878,
+                                    53.334241
+                                ],
+                                [
+                                    -6.252637,
+                                    53.329628
+                                ]
+                            ]
+                        ],
+                        "type": "Polygon"
+                    }
+                }
+            ]
         }
 
 
@@ -2735,7 +2711,9 @@ Returns a GeoJSON feature collection object of the all the policy diagrams in th
                 "color": "#071ac8",
                 "diagramid": 5,
                 "description": "testing",
-                "systag": "Small buildings, low density housing"
+                "systag": "Small buildings, low density housing",
+                "cost_override": 0,
+                "cost_override_type": "per hectare.",
               }
             }
           ]
@@ -2823,7 +2801,9 @@ Returns a GeoJSON feature collection object of of the all the project diagrams f
                 "color": "#331196",
                 "diagramid": 10,
                 "description": "ce3",
-                "systag": "Small buildings, low density housing"
+                "systag": "Small buildings, low density housing",
+                "cost_override": 100,
+                "cost_override_type": "total",
               }
             }
           ]
@@ -2916,7 +2896,9 @@ Returns a GeoJSON feature collection object of of the all the policy diagrams fo
                 "color": "#331196",
                 "diagramid": 12,
                 "description": "656",
-                "systag": "Small buildings, low density housing"
+                "systag": "Small buildings, low density housing",
+                "cost_override": 0,
+                "cost_override_type": "total",
               }
             }
           ]
