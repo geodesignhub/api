@@ -1593,7 +1593,8 @@ Add a new diagram to a system
                   ]
                 },
             "featuretype": "polygon"
-            "description": "A new shopping mall"
+            "description": "A new shopping mall", 
+            "fundingtype":"public"
         }
         
 + Response 200 (application/json)
@@ -1601,6 +1602,7 @@ Add a new diagram to a system
         {
             "msg":"Diagram successfully Added"}
         }
+
 ## Add Policy Diagram to System [/projects/{projectid}/systems/{sysid}/add/policy/]
 
 ### Add a policy diagram [POST]
@@ -1657,6 +1659,7 @@ Add a new diagram to a system
                 },
             "featuretype": "polygon"
             "description": "Low taxation policy"
+            "fundingtype":"public"
         }
         
 + Response 200 (application/json)
