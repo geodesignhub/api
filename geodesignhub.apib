@@ -2898,3 +2898,73 @@ Returns a GeoJSON feature collection object of of the all the policy diagrams fo
             }
           ]
         }
+
+
+## Group Tasks API
+A set of resources related to Tasks and Boards within a Geodesignhub Project
+
+## Boards Collection [/projects/{projectid}/boards/]
+
+### List all boards created for a project [GET]
+Return all the boards for that project.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+            [
+                {
+                    "id": "8f99a13f-04ae-48e3-8f51-40d967ec38ca",
+                    "synthesisid": "PCJ4JKX9MVSJGN6J",
+                    "description": "N.1"
+                }
+            ]
+
+            
+## Board Detail [/projects/{projectid}/boards/{boardid}/]
+
+### Get details of a board [GET]
+Returns details the board that is passed in the boards ID.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + boardid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the digaram in the form of an uuid4 string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+            "id": "8f99a13f-04ae-48e3-8f51-40d967ec38ca",
+            "updated": "2019-04-27T20:47:36.071973"
+        }
+
+## Board Gantt Detail [/projects/{projectid}/boards/{boardid}/gantt]
+
+### Get details of the gantt chart in a board [GET]
+Returns details the gantt chart that is associated with the passed board ID.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + boardid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the digaram in the form of an uuid4 string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+            "id": "c97b91e3-a634-4a46-bcce-15dee2d2afeb",
+            "data": "{}"
+        }
