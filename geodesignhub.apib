@@ -3,17 +3,17 @@ HOST: https://www.geodesignhub.com/api/v1
 
 # Geodesignhub API
 
-Geodesignhub API exposes a number of functionalities of the tool for developers to build applications and plugins with the tool. The API is a JSON-based REST API and uses standard HTTP response codes to indicate API errors.
+Geodesignhub API exposes a number of functionalities of the platform for developers to build applications and plugins. The API is a JSON-based and provides a REST interface, it uses standard HTTP response codes to indicate API errors.
 
 
 #### Token Authentication
-Geodesignhub exposes project information via the API and is linked to user accounts via Token Authentication. Since the token is linked to the user, all the projects that the user is part of are accessible using the token. Currently, tokens have an expiry of six months after which a new token can be issued.
+Geodesignhub exposes project objects and information via the API.  These are associated with individual user accounts via Token Authentication. Since the token is linked to the user, all the projects that the user is part of are accessible using the token. Currently, tokens have an expiry of six months after which a new token can be issued.
 
 You can get your Token by opening the [API page](https://www.geodesignhub.com/api/token/) on Geodesignhub.
 
 
 #### Access
-Geodesignhub supports only **https://** connections via the API. ``http://`` connections will be given a automatic HTTP 301 response.
+Geodesignhub supports only **https://** connections via the API. ``http://`` connections will be given a automatic HTTP 301 response. In some cases, ``http://`` queries may be dropped by the server, you may get time out or end point not reachable errors. 
 
 
 #### Pagination
