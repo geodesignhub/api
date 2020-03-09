@@ -795,130 +795,68 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
 + Response 200 (application/json)
 
         {
-          "geojson": {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "geometry": {
-                  "type": "Polygon",
-                  "coordinates": [
-                    [
-                      [
-                        -0.09514331817626952,
-                        51.51555307745177
-                      ],
-                      [
-                        -0.09394168853759766,
-                        51.51523260058079
-                      ],
-                      [
-                        -0.08668899536132812,
-                        51.51549966479653
-                      ],
-                      [
-                        -0.0856161117553711,
-                        51.515659902574384
-                      ],
-                      [
-                        -0.08085250854492186,
-                        51.51547295844541
-                      ],
-                      [
-                        -0.08020877838134766,
-                        51.51531272000991
-                      ],
-                      [
-                        -0.07797718048095703,
-                        51.51437798456801
-                      ],
-                      [
-                        -0.07746219635009766,
-                        51.51395067054886
-                      ],
-                      [
-                        -0.07741928100585936,
-                        51.51352335252112
-                      ],
-                      [
-                        -0.07784843444824219,
-                        51.5129891993494
-                      ],
-                      [
-                        -0.07973670959472656,
-                        51.51280224425956
-                      ],
-                      [
-                        -0.0832986831665039,
-                        51.51309603048481
-                      ],
-                      [
-                        -0.08703231811523438,
-                        51.51309603048481
-                      ],
-                      [
-                        -0.08870601654052734,
-                        51.5129891993494
-                      ],
-                      [
-                        -0.09029388427734374,
-                        51.51325627671818
-                      ],
-                      [
-                        -0.09162425994873047,
-                        51.51365688983539
-                      ],
-                      [
-                        -0.0960874557495117,
-                        51.51456493319091
-                      ],
-                      [
-                        -0.09724617004394531,
-                        51.514992241447835
-                      ],
-                      [
-                        -0.0972890853881836,
-                        51.51568660881589
-                      ],
-                      [
-                        -0.09552955627441406,
-                        51.51571331504175
-                      ],
-                      [
-                        -0.09514331817626952,
-                        51.51555307745177
-                      ],
-                      [
-                        -0.09514331817626952,
-                        51.51555307745177
-                      ]
-                    ]
-                  ]
-                },
-                "type": "Feature",
-                "properties": {
-                  "areatype": "project",
-                  "author": "ufeusr1",
-                  "color": "#071ac8",
-                  "diagramid": 5,
-                  "sysid": 1,
-                  "systag": "Small buildings, low density housing"
-                }
-              }
-            ]
-          },
-          "sysid": 1,
-          "rank": 1,
-          "type": "policy",
-          "id": 1,
-          "description": "Forest areas to be protected",
-          "length": 0,
-          "area": 16791.702,
-          "cost_override": 100,
-          "cost_override_type": "total",
-          "created_at": "2018-08-26 20:57:02",
-          "start_date": "2020-09-25 00:57:02",
-          "start_date": "2022-10-10 00:57:02"
+            "geojson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "areatype": "project",
+                            "color": "#ffcc00",
+                            "systag": "Small buildings, low density housing",
+                            "diagramid": 155,
+                            "sysname": "LDH",
+                            "author": "ufeusr1"
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                [
+                                    [
+                                        -6.255365,
+                                        53.327752
+                                    ],
+                                    [
+                                        -6.255408,
+                                        53.32691
+                                    ],
+                                    [
+                                        -6.254233,
+                                        53.326839
+                                    ],
+                                    [
+                                        -6.254147,
+                                        53.327739
+                                    ],
+                                    [
+                                        -6.255365,
+                                        53.327752
+                                    ]
+                                ]
+                            ],
+                            "type": "Polygon"
+                        }
+                    }
+                ]
+            },
+            "sysid": 48,
+            "rank": 2,
+            "id": 2,
+            "description": "new park",
+            "type": "project",
+            "length": 0.0,
+            "area": 7733.067,
+            "fundingtype": "public",
+            "cost_override_type": "per hectare.",
+            "cost_override": 0.0,
+            "created_at": "2020-03-06 12:50:32",
+            "building_data": {
+                "storeys_above_ground": 95,
+                "storeys_below_ground": -10
+            }
         }
+        
+        
+        
 
 ## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
 
