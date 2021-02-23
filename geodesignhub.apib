@@ -1124,7 +1124,7 @@ Resources related to systems within a project on Geodesignhub.
 ## Systems Collection [/projects/{projectid}/systems/]
 
 ### List project systems [GET]
-Returns all the system details for the project with ID and system name.
+Returns basic system details for the project with ID and system name. For futher details, look up the systems/{systemid} endpoint
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -1140,22 +1140,26 @@ Returns all the system details for the project with ID and system name.
           {
             "id": 1,
             "sysname": "LDH",
-            "syscolor": "#071ac8"
+            "syscolor": "#071ac8", 
+            "default_storeys": 0
           },
           {
             "id": 2,
             "sysname": "HDH",
-            "syscolor": "#fc1999"
+            "syscolor": "#fc1999", 
+            "default_storeys": 0
           },
           {
             "id": 3,
             "sysname": "AG",
-            "syscolor": "#18a81b"
+            "syscolor": "#18a81b", 
+            "default_storeys": 14
           },
           {
             "id": 15,
             "sysname": "S4",
-            "syscolor": "#0a650c"
+            "syscolor": "#0a650c", 
+            "default_storeys": 10
           }
         ]
 
