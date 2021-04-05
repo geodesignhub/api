@@ -872,7 +872,6 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
         }
         
         
-        
 
 ## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
 
@@ -893,6 +892,48 @@ Returns the a hash of the last modified date, can be used to see if a diagram ha
         {
           "changehash": "57266cf8"
         }
+
+## Generate Diagram Thumbnail [/projects/{projectid}/diagrams/{diagramid}/generate_thumbnail/]
+
+### Generate a thumbnail of a diagram [POST]
+Returns a uuid of the job that generates a thumbnail image, can be used to download a PNG image of a diagram.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "changehash": "57266cf8",
+          "results_url":"/api/v1/projects/5c84b38a16ebeed0/diagrams/12/thumbnail/70c5f4e6-b656-4412-8ee5-16c30de0509f"
+        }
+
+## Get Diagram Thumbnail [/projects/{projectid}/diagrams/{diagramid}/generate_thumbnail/{jobid}]
+
+### Generate a thumbnail of a diagram [GET]
+Returns a PNG image of the diagram thumbnail that was generated earlier, a PNG image is retured as a response
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    + jobid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the job as given by the earlier generate 
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (image/png)
+    + Headers
+
+            Content-Length: 26572
+
 
 
 ## User Diagrams Selections [/projects/{projectid}/members/{username}/diagrams/]
