@@ -2925,10 +2925,10 @@ Returns details the board that is passed in the boards ID.
             "updated": "2019-04-27T20:47:36.071973"
         }
 
-## Board Gantt Detail [/projects/{projectid}/boards/{boardid}/gantt/]
+## Board timeline Detail [/projects/{projectid}/boards/{boardid}/timeline/]
 
-### Get details of the gantt chart in a board [GET]
-Returns details the gantt chart that is associated with the passed board ID.
+### Get details of the timeline in a board [GET]
+Returns details the timeline that is associated with the passed board ID.
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -2941,108 +2941,23 @@ Returns details the gantt chart that is associated with the passed board ID.
             
 + Response 200 (application/json)
 
-                {
-                    "id": "cf34f709-9bd9-46d9-be7a-0d2ec6b83e9a",
-                    "gantt_data": {
-                        "data": [
-                            {
-                                "id": "req-5",
-                                "text": "TRANS",
-                                "type": "project",
-                                "className": "c-0d0d0d",
-                                "start_date": "01-01-2019 00:00",
-                                "duration": 1,
-                                "end_date": "01-02-2019 00:00",
-                                "parent": 0
-                            },
-                            {
-                                "id": "req-7",
-                                "text": "LDH",
-                                "type": "project",
-                                "className": "c-ffcc00",
-                                "start_date": "01-01-2019 00:00",
-                                "duration": 1,
-                                "end_date": "01-02-2019 00:00",
-                                "parent": 0
-                            },
-                            {
-                                "id": "req-8",
-                                "text": "MIX",
-                                "type": "project",
-                                "className": "c-843c0c",
-                                "start_date": "01-01-2019 00:00",
-                                "duration": 1,
-                                "end_date": "01-02-2019 00:00",
-                                "parent": 0
-                            },
-                            {
-                                "id": 79,
-                                "text": "TRANS 2 Add bike path",
-                                "start_date": "01-01-2019 00:00",
-                                "end_date": "01-11-2020 00:00",
-                                "priority": 5,
-                                "className": "c-0d0d0d",
-                                "owner": "f1833686-3a57-43a2-96b1-3ec79fa8b84e",
-                                "contact": "ufeusr1",
-                                "duration": 22,
-                                "parent": 0
-                            },
-                            {
-                                "id": 1560247977640,
-                                "start_date": "01-01-2019 00:00",
-                                "text": "Public Consultation",
-                                "duration": 9,
-                                "parent": 79,
-                                "end_date": "01-10-2019 00:00",
-                                "className": "c-0d0d0d"
-                            },
-                            {
-                                "id": 1560247977641,
-                                "start_date": "01-12-2019 00:00",
-                                "text": "Re-paving",
-                                "duration": 12,
-                                "parent": 79,
-                                "end_date": "01-12-2020 00:00",
-                                "className": "c-0d0d0d"
-                            },
-                            {
-                                "id": 80,
-                                "text": "LDH 4 New single family housing",
-                                "start_date": "01-01-2022 00:00",
-                                "end_date": "01-01-2025 00:00",
-                                "priority": 7,
-                                "className": "c-ffcc00",
-                                "owner": "92795e84-8670-4b90-9db8-42f1ce9f171f",
-                                "contact": "ufeusr2",
-                                "duration": 36,
-                                "parent": 0
-                            },
-                            {
-                                "id": 81,
-                                "text": "MIX 3 New Mixed use ",
-                                "start_date": "01-01-2023 00:00",
-                                "end_date": "01-02-2026 00:00",
-                                "priority": 8,
-                                "className": "c-843c0c",
-                                "owner": "",
-                                "contact": "",
-                                "duration": 37,
-                                "parent": 0
-                            }
-                        ],
-                        "links": [
-                            {
-                                "source": "79",
-                                "target": "80",
-                                "type": "0",
-                                "id": 1561470918546
-                            },
-                            {
-                                "source": "79",
-                                "target": "81",
-                                "type": "0",
-                                "id": 1561470918547
-                            }
-                        ]
+                [
+                    {
+                        "id": 138,
+                        "content": "<span>LDH 1 New housing</span>",
+                        "start": "2020-01-28T00:00:00.000Z",
+                        "group": 48,
+                        "subgroup": "project",
+                        "end": "2021-01-28T00:00:00.000Z",
+                        "className": "c-ffcc00"
+                    },
+                    {
+                        "id": 139,
+                        "content": "<span>TRANS 1 new bike path</span>",
+                        "start": "2020-01-28T00:00:00.000Z",
+                        "group": 46,
+                        "subgroup": "project",
+                        "end": "2021-01-28T00:00:00.000Z",
+                        "className": "c-5a5a5a"
                     }
-                }
+                ]
