@@ -2359,6 +2359,196 @@ Returns a object that details the system priorities and rank for this change tea
         
 
 
+## Change Team Design Synthesis [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/esri/]
+
+### Get design synthesis (ESRI-JSON) [GET]
+Returns a ESRI-JSON featureset object of the synthesis that is saved.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + cteamid: 12 (integer) - The ID of the change team in the form of an integer
+    + synthesisid: 2G638FLMLJEGF706 (string) - The ID of a synthesis in the form of a string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        [
+          {
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -6.255692,
+                    53.326477
+                  ],
+                  [
+                    -6.255649,
+                    53.326358
+                  ],
+                  [
+                    -6.255928,
+                    53.326262
+                  ],
+                  [
+                    -6.256051,
+                    53.326352
+                  ],
+                  [
+                    -6.255692,
+                    53.326477
+                  ]
+                ]
+              ],
+              "spatialReference": {
+                "wkid": 3857
+              }
+            },
+            "attributes": {
+              "id": 0
+            }
+          },
+          {
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -6.255418,
+                    53.326198
+                  ],
+                  [
+                    -6.255252,
+                    53.326102
+                  ],
+                  [
+                    -6.255585,
+                    53.32598
+                  ],
+                  [
+                    -6.255708,
+                    53.326105
+                  ],
+                  [
+                    -6.255418,
+                    53.326198
+                  ]
+                ]
+              ],
+              "spatialReference": {
+                "wkid": 3857
+              }
+            },
+            "attributes": {
+              "id": 0
+            }
+          },
+          {
+            "geometry": {
+              "rings": [
+                [
+                  [
+                    -6.255502,
+                    53.325996
+                  ],
+                  [
+                    -6.254879,
+                    53.326253
+                  ],
+                  [
+                    -6.254724,
+                    53.32609
+                  ],
+                  [
+                    -6.255437,
+                    53.325779
+                  ],
+                  [
+                    -6.255502,
+                    53.325996
+                  ]
+                ]
+              ],
+              "spatialReference": {
+                "wkid": 3857
+              }
+            },
+            "attributes": {
+              "description": "new polygon",
+              "author": "ufeusr1",
+              "diagramid": 31,
+              "systag": "Small buildings, low density housing",
+              "sysname": "LDH",
+              "areatype": "project",
+              "diagramtype": "project",
+              "fundingtype": "public",
+              "cost_override": 0,
+              "cost_override_type": "per hectare.",
+              "color": "#ffcc00",
+              "notes": "",
+              "min_height": 0,
+              "max_height": 0
+            }
+          },
+          {
+            "geometry": {
+              "paths": [
+                [
+                  [
+                    -6.254616,
+                    53.327141
+                  ],
+                  [
+                    -6.254128,
+                    53.327073
+                  ],
+                  [
+                    -6.253458,
+                    53.326977
+                  ],
+                  [
+                    -6.253479,
+                    53.326756
+                  ],
+                  [
+                    -6.253388,
+                    53.326551
+                  ],
+                  [
+                    -6.253597,
+                    53.326493
+                  ],
+                  [
+                    -6.25445,
+                    53.32617
+                  ]
+                ]
+              ],
+              "spatialReference": {
+                "wkid": 3857
+              }
+            },
+            "attributes": {
+              "description": "AG Numeric",
+              "author": "ufeusr1",
+              "diagramid": 61,
+              "systag": "Agriculture, Forestry",
+              "sysname": "AG",
+              "areatype": "project",
+              "diagramtype": "project",
+              "fundingtype": "public",
+              "cost_override": 100,
+              "cost_override_type": "total",
+              "color": "#C2E699",
+              "notes": "",
+              "min_height": 0,
+              "max_height": 0
+            }
+          }
+        ]
+
 ## Change Team Design Synthesis [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/]
 
 ### Get design synthesis [GET]
@@ -2425,7 +2615,7 @@ Returns a GeoJSON feature collection object of the synthesis that is saved.
                                     53.332213
                                 ]
                             ]
-                        ],
+                                      ],
                         "type": "Polygon"
                     }
                 },
