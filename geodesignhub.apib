@@ -980,6 +980,59 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
         
         
 
+## Diagram Tags Detail [/projects/{projectid}/diagrams/{diagramid}/tags/]
+
+### Get all Tags associated with a diagram [GET]
+Returns the a JSON detailing the tags associated / linked to a diagram for the that is passed in the diagram ID.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
+
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Request (application/json)
+
+        ["8a0abf8b-5bbc-4a1b-ac80-872291daed9f"]
+         
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "a95fcf52-b2df-46a8-9f70-dab4e7eebaa9",
+                "tag": "house",
+                "slug": "house"
+            }
+        ]
+
+### Update all Tags associated with a diagram [POST]
+Returns the a JSON detailing the tags associated / linked to a diagram for the that is passed in the diagram ID. If the diagram has tags associated with it currently, they will be removed.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "a95fcf52-b2df-46a8-9f70-dab4e7eebaa9",
+                "tag": "house",
+                "slug": "house"
+            }
+        ]
+
+
 ## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
 
 ### Get details last modified timestamp of a diagram [GET]
@@ -1546,7 +1599,7 @@ Returns a GeoJSON feature collection for the evaluation map for this system.
         }
 
 
-## Add Project Diagram to System [/projects/{projectid}/systems/{sysid}/add/project/]
+## Add Project Diagram to System [/projects/{projectid}/systems/{sysid}dd/project/]
 
 ### Add a project diagram [POST]
 Add a new diagram to a system
@@ -1556,6 +1609,12 @@ Add a new diagram to a system
     + sysid: 23 (integer) - The ID of the system in the form of an integer
 
 
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
 + Request (application/json)
 
         {
