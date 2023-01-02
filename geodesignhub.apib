@@ -428,6 +428,44 @@ Returns a GeoJSON geometry of second boundaries set within the project area. (Up
         }
 
 
+## Project Tags [/projects/{projectid}/tags/]
+
+### Get all project tags [GET]
+Returns a JSON object detailing all the tags associated with a project, a diagram can have multiple tags associated with it. 
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "a95fcf52-b2df-46a8-9f70-dab4e7eebaa9",
+                "tag": "house",
+                "slug": "house"
+            },
+            {
+                "id": "d5ea9a83-ca25-4f2a-b077-6480055e4835",
+                "tag": "home",
+                "slug": "home"
+            },
+            {
+                "id": "12697faa-6dbf-4b47-9696-6108c7e4e99e",
+                "tag": "holiday",
+                "slug": "holiday"
+            },
+            {
+                "id": "b88bc74b-58fb-4a38-88b9-16a679a4b783",
+                "tag": "housing",
+                "slug": "housing"
+            }
+        ]
+
 ## Group Diagrams API
 Resources related to diagrams on Geodesignhub.
 
