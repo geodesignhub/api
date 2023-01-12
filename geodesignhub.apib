@@ -995,11 +995,6 @@ Returns the a JSON detailing the tags associated / linked to a diagram for the t
 
             Authorization: Token ABC123
             
-    + Body
-
-        ["8a0abf8b-5bbc-4a1b-ac80-872291daed9f"]
-         
-            
 + Response 200 (application/json)
 
         [
@@ -1022,6 +1017,12 @@ Returns the a JSON detailing the tags associated / linked to a diagram for the t
 
             Authorization: Token ABC123
             
+    + Body
+
+
+            ["8a0abf8b-5bbc-4a1b-ac80-872291daed9f"]
+         
+            
 + Response 200 (application/json)
 
         [
@@ -1031,6 +1032,56 @@ Returns the a JSON detailing the tags associated / linked to a diagram for the t
                 "slug": "house"
             }
         ]
+
+
+## Diagram Notes Detail [/projects/{projectid}/diagrams/{diagramid}/notes/]
+
+### Get all Notes associated with a diagram [GET]
+Returns the a JSON object detailing the notes associated / linked to a diagram that is passed in the diagram ID parameter.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Token ABC123
+            
+            
++ Response 200 (application/json)
+
+    
+        {
+            "id": "54",
+            "notes": "This housing project is already funded"
+        }
+
+### Update all Notes associated with a diagram [POST]
+Returns the a JSON detailing the notes associated / linked to a diagram that is passed in the diagram ID parameter.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+                 
+    + Body
+
+            "This is a updated note for the diagram"
+         
+       
++ Response 200 (application/json)
+
+
+        {
+            "id": "54",
+            "notes": "This is a updated note for the diagram"
+        }
 
 
 ## Diagram Last Changed [/projects/{projectid}/diagrams/{diagramid}/changeid/]
@@ -1616,57 +1667,57 @@ Add a new diagram to a system
             Authorization: Token ABC123
             
     + Body
-
-        {
-            "geometry": {
-                  "type": "FeatureCollection",
-                  "features": [
-                    {
-                      "type": "Feature",
-                      "properties": {},
-                      "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [
-                          [
-                            [
-                              -0.09307265281677245,
-                              51.516194024429446
-                            ],
-                            [
-                              -0.09310483932495117,
-                              51.51524595382876
-                            ],
-                            [
-                              -0.09136676788330077,
-                              51.51502562473659
-                            ],
-                            [
-                              -0.09100198745727538,
-                              51.515639872882986
-                            ],
-                            [
-                              -0.09152770042419434,
-                              51.51636093622468
-                            ],
-                            [
-                              -0.09307265281677245,
-                              51.51622740683744
-                            ],
-                            [
-                              -0.09307265281677245,
-                              51.516194024429446
+    
+            {
+                "geometry": {
+                      "type": "FeatureCollection",
+                      "features": [
+                        {
+                          "type": "Feature",
+                          "properties": {},
+                          "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                              [
+                                [
+                                  -0.09307265281677245,
+                                  51.516194024429446
+                                ],
+                                [
+                                  -0.09310483932495117,
+                                  51.51524595382876
+                                ],
+                                [
+                                  -0.09136676788330077,
+                                  51.51502562473659
+                                ],
+                                [
+                                  -0.09100198745727538,
+                                  51.515639872882986
+                                ],
+                                [
+                                  -0.09152770042419434,
+                                  51.51636093622468
+                                ],
+                                [
+                                  -0.09307265281677245,
+                                  51.51622740683744
+                                ],
+                                [
+                                  -0.09307265281677245,
+                                  51.516194024429446
+                                ]
+                              ]
                             ]
-                          ]
-                        ]
-                      }
-                    }
-                  ]
-                },
-            "featuretype": "polygon",
-            "description": "A new shopping mall", 
-            "fundingtype":"pu"
-        }
-        
+                          }
+                        }
+                      ]
+                    },
+                "featuretype": "polygon",
+                "description": "A new shopping mall", 
+                "fundingtype":"pu"
+            }
+            
 + Response 200 (application/json)
 
         {
@@ -1690,49 +1741,49 @@ Add a new diagram to a system
             Authorization: Token ABC123
             
     + Body
-
-        {
-            "geometry": {
-                  "type": "FeatureCollection",
-                  "features": [
-                    {
-                      "type": "Feature",
-                      "properties": {},
-                      "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [
-                          [
-                            [
-                              -0.10273933410644531,
-                              51.5111730317151
-                            ],
-                            [
-                              -0.10273933410644531,
-                              51.523003529077705
-                            ],
-                            [
-                              -0.08351325988769531,
-                              51.523003529077705
-                            ],
-                            [
-                              -0.08351325988769531,
-                              51.5111730317151
-                            ],
-                            [
-                              -0.10273933410644531,
-                              51.5111730317151
+    
+            {
+                "geometry": {
+                      "type": "FeatureCollection",
+                      "features": [
+                        {
+                          "type": "Feature",
+                          "properties": {},
+                          "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                              [
+                                [
+                                  -0.10273933410644531,
+                                  51.5111730317151
+                                ],
+                                [
+                                  -0.10273933410644531,
+                                  51.523003529077705
+                                ],
+                                [
+                                  -0.08351325988769531,
+                                  51.523003529077705
+                                ],
+                                [
+                                  -0.08351325988769531,
+                                  51.5111730317151
+                                ],
+                                [
+                                  -0.10273933410644531,
+                                  51.5111730317151
+                                ]
+                              ]
                             ]
-                          ]
-                        ]
-                      }
-                    }
-                  ]
-                },
-            "featuretype": "polygon",
-            "description": "Low taxation policy",
-            "fundingtype":"pu"
-        }
-        
+                          }
+                        }
+                      ]
+                    },
+                "featuretype": "polygon",
+                "description": "Low taxation policy",
+                "fundingtype":"pu"
+            }
+            
 + Response 200 (application/json)
 
         {
@@ -1758,54 +1809,54 @@ A geoJSON object that has the updated JSON layer of either evaluation or impact 
             Authorization: Token ABC123
             
     + Body
-
-        {
-            "type":"FeatureCollection",
-            "features":[
-                {
-                    "type":"Feature",
-                    "properties":{
-                        "areatype":"red"
-                    },
-                    "geometry":{
-                        "type":"Polygon",
-                        "coordinates":[
-                            [
+    
+            {
+                "type":"FeatureCollection",
+                "features":[
+                    {
+                        "type":"Feature",
+                        "properties":{
+                            "areatype":"red"
+                        },
+                        "geometry":{
+                            "type":"Polygon",
+                            "coordinates":[
                                 [
-                                    -0.09307265281677245,
-                                    51.516194024429446
-                                ],
-                                [
-                                    -0.09310483932495117,
-                                    51.51524595382876
-                                ],
-                                [
-                                    -0.09136676788330077,
-                                    51.51502562473659
-                                ],
-                                [
-                                    -0.09100198745727538,
-                                    51.515639872882986
-                                ],
-                                [
-                                    -0.09152770042419434,
-                                    51.51636093622468
-                                ],
-                                [
-                                    -0.09307265281677245,
-                                    51.51622740683744
-                                ],
-                                [
-                                    -0.09307265281677245,
-                                    51.516194024429446
+                                    [
+                                        -0.09307265281677245,
+                                        51.516194024429446
+                                    ],
+                                    [
+                                        -0.09310483932495117,
+                                        51.51524595382876
+                                    ],
+                                    [
+                                        -0.09136676788330077,
+                                        51.51502562473659
+                                    ],
+                                    [
+                                        -0.09100198745727538,
+                                        51.515639872882986
+                                    ],
+                                    [
+                                        -0.09152770042419434,
+                                        51.51636093622468
+                                    ],
+                                    [
+                                        -0.09307265281677245,
+                                        51.51622740683744
+                                    ],
+                                    [
+                                        -0.09307265281677245,
+                                        51.516194024429446
+                                    ]
                                 ]
                             ]
-                        ]
+                        }
                     }
-                }
-            ]
-        }
-        
+                ]
+            }
+            
 + Response 200 (application/json)
 
         {
@@ -1830,53 +1881,53 @@ A geoJSON object that has the updated JSON layer of either evaluation or impact 
             Authorization: Token ABC123
             
     + Body
-
-        {
-            "type":"FeatureCollection",
-            "features":[
-                {
-                    "type":"Feature",
-                    "properties":{
-                        "areatype":"purple2"
-                    },
-                    "geometry":{
-                        "type":"Polygon",
-                        "coordinates":[
-                            [
+    
+            {
+                "type":"FeatureCollection",
+                "features":[
+                    {
+                        "type":"Feature",
+                        "properties":{
+                            "areatype":"purple2"
+                        },
+                        "geometry":{
+                            "type":"Polygon",
+                            "coordinates":[
                                 [
-                                    -0.09307265281677245,
-                                    51.516194024429446
-                                ],
-                                [
-                                    -0.09310483932495117,
-                                    51.51524595382876
-                                ],
-                                [
-                                    -0.09136676788330077,
-                                    51.51502562473659
-                                ],
-                                [
-                                    -0.09100198745727538,
-                                    51.515639872882986
-                                ],
-                                [
-                                    -0.09152770042419434,
-                                    51.51636093622468
-                                ],
-                                [
-                                    -0.09307265281677245,
-                                    51.51622740683744
-                                ],
-                                [
-                                    -0.09307265281677245,
-                                    51.516194024429446
+                                    [
+                                        -0.09307265281677245,
+                                        51.516194024429446
+                                    ],
+                                    [
+                                        -0.09310483932495117,
+                                        51.51524595382876
+                                    ],
+                                    [
+                                        -0.09136676788330077,
+                                        51.51502562473659
+                                    ],
+                                    [
+                                        -0.09100198745727538,
+                                        51.515639872882986
+                                    ],
+                                    [
+                                        -0.09152770042419434,
+                                        51.51636093622468
+                                    ],
+                                    [
+                                        -0.09307265281677245,
+                                        51.51622740683744
+                                    ],
+                                    [
+                                        -0.09307265281677245,
+                                        51.516194024429446
+                                    ]
                                 ]
                             ]
-                        ]
+                        }
                     }
-                }
-            ]
-        }
+                ]
+            }
             
 + Response 200 (application/json)
 
