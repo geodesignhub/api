@@ -990,12 +990,12 @@ Returns the a JSON detailing the tags associated / linked to a diagram for the t
     + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
     
 
-+ Request
++ Request (application/json)
     + Headers
 
             Authorization: Token ABC123
             
-+ Request (application/json)
+    + Body
 
         ["8a0abf8b-5bbc-4a1b-ac80-872291daed9f"]
          
@@ -1011,7 +1011,7 @@ Returns the a JSON detailing the tags associated / linked to a diagram for the t
         ]
 
 ### Update all Tags associated with a diagram [POST]
-Returns the a JSON detailing the tags associated / linked to a diagram for the that is passed in the diagram ID. If the diagram has tags associated with it currently, they will be removed.
+Returns the a JSON detailing the tags associated / linked to a diagram for the that is passed in the diagram ID.
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -1610,12 +1610,12 @@ Add a new diagram to a system
 
 
     
-+ Request
++ Request (application/json)
     + Headers
 
             Authorization: Token ABC123
             
-+ Request (application/json)
+    + Body
 
         {
             "geometry": {
@@ -1670,7 +1670,6 @@ Add a new diagram to a system
 + Response 200 (application/json)
 
         {
-            "diagram_id":"23",
             "grid_location":"TRANS 1",
             "status":"Successfully added diagram to the project"
         }
@@ -1685,12 +1684,12 @@ Add a new diagram to a system
     + sysid: 23 (integer) - The ID of the system in the form of an integer
 
     
-+ Request
++ Request (application/json)
     + Headers
 
             Authorization: Token ABC123
             
-+ Request (application/json)
+    + Body
 
         {
             "geometry": {
@@ -1737,7 +1736,6 @@ Add a new diagram to a system
 + Response 200 (application/json)
 
         {
-            "diagram_id":"23",
             "grid_location":"TRANS 1",
             "status":"Successfully added diagram to the project"
         }
@@ -1754,12 +1752,12 @@ A geoJSON object that has the updated JSON layer of either evaluation or impact 
     + username: ufeusr1 (string) - The username of a user who is a member of the project
 
     
-+ Request
++ Request (application/json)
     + Headers
 
             Authorization: Token ABC123
             
-+ Request (application/json)
+    + Body
 
         {
             "type":"FeatureCollection",
@@ -1826,12 +1824,12 @@ A geoJSON object that has the updated JSON layer of either evaluation or impact 
     + username: ufeusr1 (string) - The username of a user who is a member of the project
 
     
-+ Request
++ Request (application/json)
     + Headers
 
             Authorization: Token ABC123
             
-+ Request (application/json)
+    + Body
 
         {
             "type":"FeatureCollection",
