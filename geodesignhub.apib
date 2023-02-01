@@ -988,7 +988,7 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
 
 
 ### Bulk Update properties of a diagram [POST]
-Bulk update selected properties of a diagram. Currently, three properties are supported: Tags (tag_codes), Notes (notes) and Diagram Title (worlddescription)
+Bulk update selected properties of a diagram. Currently, three properties are supported: Tags (tag_codes), Notes (notes) and Diagram Title (worlddescription).
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -1004,16 +1004,24 @@ Bulk update selected properties of a diagram. Currently, three properties are su
 
             {"notes":"Updated Notes 1", "tag_codes": ["1.3.4"] }
          
-                       
+            
 + Response 200 (application/json)
+
         {
             "status": "Diagram properties updated successfully"
         }
 
++ Response 400 (application/json)
+
+    
+        {
+            "status": "Processing unsuccessful. Tag ID provided refers to a tag not in the project."
+        }
+    
 ## Diagram Tags Detail [/projects/{projectid}/diagrams/{diagramid}/tags/]
 
 ### Get all Tags associated with a diagram [GET]
-Returns the a JSON detailing the tags associated / linked to a diagram for the that is passed in the diagram ID.
+Returns the a JSON detailing the tags associated / linkedbo a diagram for the that is passed in the diagram ID.
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
