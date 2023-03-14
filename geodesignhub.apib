@@ -998,7 +998,12 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
 
 
 ### Bulk Update properties of a diagram [POST]
-Bulk update selected properties of a diagram. Currently, five properties are supported: Tags (tag_codes), Notes (notes) and Diagram Title (worlddescription), Start Date (start_date) and End Date (end_date).
+Bulk update selected properties of a diagram. Currently, five properties are supported: 
+- Tags (tag_codes): List of Code ID strings
+- Additional Metadata (additional_metadata): Free form JSON object
+- Diagram Title (title): String
+- Start Date (start_date): Time represented as simplified extended ISO format (ISO 8601), which is always 24 or 27 characters long (YYYY-MM-DDTHH:mm:ss.sssZ or ±YYYYYY-MM-DDTHH:mm:ss.sssZ
+- End Date (end_date): Time represented as simplified extended ISO format (ISO 8601), which is always 24 or 27 characters long (YYYY-MM-DDTHH:mm:ss.sssZ or ±YYYYYY-MM-DDTHH:mm:ss.sssZ
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -1012,7 +1017,7 @@ Bulk update selected properties of a diagram. Currently, five properties are sup
     + Body
 
 
-            {"notes":"Updated Notes 1", "tag_codes": ["1.3.4"], "title": "New Title","start_date": "2020-01-28T00:00:00.000Z","end_date": "2021-01-28T00:00:00.000Z"}
+            {"additional_metadata":{"id":"ca665187-6cfd-40a2-8cbf-3247d73c55f3"}, "tag_codes": ["1.3.4"], "title": "New Title","start_date": "2020-01-28T00:00:00.000Z","end_date": "2021-01-28T00:00:00.000Z"}
          
             
 + Response 200 (application/json)
