@@ -51,6 +51,45 @@ Returns a list of projects that has the current user as a member.
           }
         ]
 
+## Project Creation [/projects/create/]
+
+### Create New Project [POST]
+Create a new project in Geodesignhub
+
+    + Request (application/json)
+    
+        A set of data is requried to create a project, please review below
+    
+            + `creation_code` A Geodesignhub project creation code, if you don't have one, please contact your project administrator
+            + `project_title` Title of the project, it will be displayed at the top of every project
+            + `project_description` Title of the project, it will be displayed at the top of every project
+            + `map_bounds` Represents a rectangular geographical area on a map. 
+            + `map_center` Represents a center as comma seperated Latitude,Longitude center
+            + `zoom_level` Sets the zoom of the map
+            + `systems` A list of systems that will be created in the project. Each object should have a `name`, `display`, `color` and `cost` value for the system. Maximum nine systems can be provided.
+
+    + Headers
+    
+            Authorization: Token ABC123
+            
+    + Body
+    
+        {
+            "creation_code": "3PRHNU", 
+            "project_title" : "Dublin Geodesign",
+            "project_description":"Alternative futures for Ranelagh",
+            "map_bounds": "-6.257314682006836,53.32508049349382,-6.250877380371094,53.328925153953186",
+            "map_center" : "-6.254,53.327",
+            "zoom_level":16,
+            "systems": [{"name":"ENE", "tag":"POR", "display":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "display":"Agriculture", "color":"#d9cd91", "cost":4000}]
+        }
+            
++ Response 200 (application/json)
+
+        {
+            "grid_location":"TRANS 1",
+            "status":"Successfully added diagram to the project"
+        }
 
 ## Project Detail [/projects/{projectid}/]
 
@@ -1013,7 +1052,17 @@ Bulk update selected properties of a diagram. Currently, five properties are sup
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
     + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
     
-+ Request
++ Request (application/json)
+
+    A object called "additional_metadata" must be provided
+
+    + Tags `tag_codes`: List of Code ID strings
+    + Additional Metadata `additional_metadata`: Free form JSON object
+    + Diagram Title `title`: String
+    + Start Date `start_date`: Time represented as simplified extended ISO format (ISO 8601), which is always 24 or 27 characters long (YYYY-MM-DDTHH:mm:ss.sssZ or ±YYYYYY-MM-DDTHH:mm:ss.sssZ
+    + End Date `end_date`: Time represented as simplified extended ISO format (ISO 8601), which is always 24 or 27 characters long (YYYY-MM-DDTHH:mm:ss.sssZ or ±YYYYYY-MM-DDTHH:mm:ss.sssZ
+
+
     + Headers
 
             Authorization: Token ABC123
@@ -1769,7 +1818,7 @@ Returns a GeoJSON feature collection for the evaluation map for this system.
         }
 
 
-## Add Project Diagram to System [/projects/{projectid}/systems/{sysid}dd/project/]
+## Add Project Diagram to System [/projects/{projectid}/systems/{sysid}/add/project/]
 
 ### Add a project diagram [POST]
 Add a new diagram to a system
@@ -1781,6 +1830,17 @@ Add a new diagram to a system
 
     
 + Request (application/json)
+    A diagram must contain the following details
+
+    + `geometry` A GeoJSON FeatureCollection object
+    + `featuretype` Whether the diagram is a line or a polygon
+    + `description` Title of the diagram
+    + `fundingtype` Specify the funding type of the diagram:
+        - pu - Public
+        - pp - Public + Private
+        - pr - Private 
+        - bu - Budgeted
+
     + Headers
 
             Authorization: Token ABC123
@@ -1840,6 +1900,7 @@ Add a new diagram to a system
 + Response 200 (application/json)
 
         {
+            "diagram_id":"2321",
             "grid_location":"TRANS 1",
             "status":"Successfully added diagram to the project"
         }
@@ -1855,6 +1916,18 @@ Add a new diagram to a system
 
     
 + Request (application/json)
+
+    A diagram must contain the following details
+
+    + `geometry` A GeoJSON FeatureCollection object
+    + `featuretype` Whether the diagram is a line or a polygon
+    + `description` Title of the diagram
+    + `fundingtype` Specify the funding type of the diagram:
+        - pu - Public
+        - pp - Public + Private
+        - pr - Private 
+        - bu - Budgeted
+
     + Headers
 
             Authorization: Token ABC123
@@ -1906,6 +1979,7 @@ Add a new diagram to a system
 + Response 200 (application/json)
 
         {
+            "diagram_id": "2042",
             "grid_location":"TRANS 1",
             "status":"Successfully added diagram to the project"
         }
