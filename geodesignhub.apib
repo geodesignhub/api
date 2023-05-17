@@ -54,35 +54,34 @@ Returns a list of projects that has the current user as a member.
 ## Project Creation [/projects/create/]
 
 ### Create New Project [POST]
-Create a new project in Geodesignhub
+Create a new project in Geodesignhub, a set of data is requried to create a project, please review below
 
-    + Request (application/json)
-    
-        A set of data is requried to create a project, please review below
-    
-            + `creation_code` A Geodesignhub project creation code, if you don't have one, please contact your project administrator
-            + `project_title` Title of the project, it will be displayed at the top of every project
-            + `project_description` Title of the project, it will be displayed at the top of every project
-            + `map_bounds` Represents a rectangular geographical area on a map. 
-            + `map_center` Represents a center as comma seperated Latitude,Longitude center
-            + `zoom_level` Sets the zoom of the map
-            + `systems` A list of systems that will be created in the project. Each object should have a `name`, `display`, `color` and `cost` value for the system. Maximum nine systems can be provided.
+    - `creation_code` A Geodesignhub project creation code, if you don't have one, please contact your project administrator
+    - `project_title` Title of the project, it will be displayed at the top of every project
+    - `project_description` Title of the project, it will be displayed at the top of every project
+    - `map_bounds` Represents a rectangular geographical area on a map. 
+    - `map_center` Represents a center as comma seperated Latitude,Longitude center
+    - `zoom_level` Sets the zoom of the map
+    - `systems` A list of systems that will be created in the project. Each object should have a `name`, `display`, `color` and `cost` value for the system. Maximum nine systems can be provided.
+
+
++ Request (application/json)
 
     + Headers
     
             Authorization: Token ABC123
             
     + Body
-    
-        {
-            "creation_code": "3PRHNU", 
-            "project_title" : "Dublin Geodesign",
-            "project_description":"Alternative futures for Ranelagh",
-            "map_bounds": "-6.257314682006836,53.32508049349382,-6.250877380371094,53.328925153953186",
-            "map_center" : "-6.254,53.327",
-            "zoom_level":16,
-            "systems": [{"name":"ENE", "tag":"POR", "display":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "display":"Agriculture", "color":"#d9cd91", "cost":4000}]
-        }
+        
+            {
+                "creation_code": "3PRHNU", 
+                "project_title" : "Dublin Geodesign",
+                "project_description":"Alternative futures for Ranelagh",
+                "map_bounds": "-6.257314682006836,53.32508049349382,-6.250877380371094,53.328925153953186",
+                "map_center" : "-6.254,53.327",
+                "zoom_level":16,
+                "systems": [{"name":"ENE", "tag":"POR", "display":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "display":"Agriculture", "color":"#d9cd91", "cost":4000}]
+            }
             
 + Response 200 (application/json)
 
@@ -701,8 +700,8 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 },
                 "notes": "",        
                 "created_at": "2018-08-26 20:57:02",
-                "start_date": "2022-02-01 00:00:00",
-                "end_date": "2025-02-01 00:00:00"
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               },
               {
                 "geojson": {
@@ -798,8 +797,8 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 },
                 "notes": "",                   
                 "created_at": "2018-08-26 20:57:02",
-                "start_date": "2022-02-01 00:00:00",
-                "end_date": "2025-02-01 00:00:00"
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               },
               {
                 "geojson": {
@@ -879,8 +878,8 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 },
                 "notes": "",                   
                 "created_at": "2018-08-26 20:57:02",
-                "start_date": "2022-02-01 00:00:00",
-                "end_date": "2025-02-01 00:00:00"
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               }
             ]
             
@@ -918,7 +917,9 @@ Returns the a list of Diagram properties (without Geometries) for all the diagra
                 },
                 "notes": "",        
                 "additional_metadata": {},
-                "created_at": "2018-08-26 20:57:02"
+                "created_at": "2018-08-26 20:57:02",
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               },
               {
                 "sysid": 1,
@@ -935,7 +936,9 @@ Returns the a list of Diagram properties (without Geometries) for all the diagra
                 },
                 "notes": "",       
                 "additional_metadata": {},            
-                "created_at": "2018-08-26 20:57:02"
+                "created_at": "2018-08-26 20:57:02",
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               },
               {
                 "sysid": 45,
@@ -951,9 +954,9 @@ Returns the a list of Diagram properties (without Geometries) for all the diagra
                 "created_at": "2020-08-24 19:25:57",
                 "building_data": {},
                 "notes": "",
-                "additional_metadata": {},
-                "start_date": "2022-02-01 00:00:00",
-                "end_date": "2025-02-01 00:00:00"
+                "additional_metadata": {},,
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               }
             ]
 
@@ -1029,8 +1032,8 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
             "cost_override_type": "per hectare.",
             "cost_override": 0.0,
             "created_at": "2020-03-06 12:50:32",
-            "start_date": "2022-02-01 00:00:00",
-            "end_date": "2025-02-01 00:00:00",
+            "start_date": "2020-02-26",
+            "end_date": "2022-02-22",
             "notes": "",                  
             "additional_metadata": {}, 
             "building_data": {
@@ -2833,7 +2836,9 @@ Returns a ESRI-JSON featureset object of the synthesis that is saved.
               "min_height": 0,
               "additional_metadata": {},
               "max_height": 0,
-              "tag_codes": "3.2|4.3|5.5"
+              "tag_codes": "3.2|4.3|5.5",
+              "start_date": "2020-02-26",
+              "end_date": "2022-02-22"
             }
           },
           {
@@ -2890,7 +2895,9 @@ Returns a ESRI-JSON featureset object of the synthesis that is saved.
               "min_height": 0,
               "max_height": 0,
               "additional_metadata": {},
-              "tag_codes": "3.2|4.3|5.5"
+              "tag_codes": "3.2|4.3|5.5",
+              "start_date": "2020-02-26",
+              "end_date": "2022-02-22"
             }
           }
         ]
@@ -2933,7 +2940,9 @@ Returns a GeoJSON feature collection object of the synthesis that is saved.
                         "min_height": 0,
                         "max_height": 0,
                         "additional_metadata": {},
-                        "tag_codes": "3.2|4.3|5.5"
+                        "tag_codes": "3.2|4.3|5.5",
+                        "start_date": "2020-02-26",
+                        "end_date": "2022-02-22"
                     },
                     "geometry": {
                         "coordinates": [
@@ -2986,6 +2995,8 @@ Returns a GeoJSON feature collection object of the synthesis that is saved.
                         "max_height": 0,
                         "additional_metadata": {},
                         "tag_codes": "3.2|4.3|5.5"
+                        "start_date": "2020-02-26",
+                        "end_date": "2022-02-22"
                     },
                     "geometry": {
                         "coordinates": [
@@ -3223,7 +3234,9 @@ Returns a GeoJSON feature collection object of the all the policy diagrams in th
                 "min_height": 0,
                 "max_height": 0,
                 "tag_codes": "3.2|4.3|5.5",
-                "additional_metadata": {}
+                "additional_metadata": {},
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               }
             }
           ]
@@ -3318,7 +3331,9 @@ Returns a GeoJSON feature collection object of of the all the project diagrams f
                 "min_height": 0,
                 "max_height": 0,
                 "tag_codes": "3.2|4.3|5.5",
-                "additional_metadata": {}
+                "additional_metadata": {},
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               }
             }
           ]
@@ -3418,7 +3433,9 @@ Returns a GeoJSON feature collection object of of the all the policy diagrams fo
                 "min_height": 0,
                 "max_height": 0,
                 "additional_metadata": {},
-                "tag_codes": "3.2|4.3|5.5"
+                "tag_codes": "3.2|4.3|5.5",
+                "start_date": "2020-02-26",
+                "end_date": "2022-02-22"
               }
             }
           ]
