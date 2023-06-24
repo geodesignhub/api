@@ -466,7 +466,32 @@ Returns a GeoJSON geometry of second boundaries set within the project area. (Up
         }
 
 
-## Project Tags [/projects/{projectid}/tags/]
+## Project Tags [/projects/{projectid}/tags/create/]
+
+### Bulk Create project tags [POST]
+Creates multiple tags for a project. Using this endpoint, you can create multiple tags for a project. 
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+            
+    + Body
+
+
+            {"tags":[{"tag":"Hello World", "code":"1.2.2"}]}
+            
+            
++ Response 200 (application/json)
+
+        {
+            "status": "Tags created successfully"
+        }
+
 
 ### Get all project tags [GET]
 Returns a JSON object detailing all the tags associated with a project, a diagram can have multiple tags associated with it. 
