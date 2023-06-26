@@ -42,12 +42,41 @@ Returns a list of projects that has the current user as a member.
           {
             "id": "5c84b38a16ebeed0",
             "projecttitle": "Cagliari geodesign",
-            "projectdesc": "Alternative futures for Metro Cagliari"
+            "projectdesc": "Alternative futures for Metro Cagliari",
+            "startdate": "2023-06-14",
+            "projecttype": "free",
+            "external_connection": "none"
           },
           {
             "id": "f05bf015a514a67c",
             "projecttitle": "Phoenix Geodesign",
-            "projectdesc": "Alternative futures for Phoenix, Arizona"
+            "projectdesc": "Alternative futures for Phoenix, Arizona",
+            "startdate": "2023-06-14",
+            "projecttype": "free",
+            "external_connection": "none"
+          }
+        ]
+
+## Latest Project Details [/projects/latest/]
+
+### List all projects [GET]
+Returns with the details of the latest created project that has the current user as a member.
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+        
+        [
+          {
+            "id": "5c84b38a16ebeed0",
+            "projecttitle": "Cagliari geodesign",
+            "projectdesc": "Alternative futures for Metro Cagliari",
+            "startdate": "2023-06-14",
+            "projecttype": "free",
+            "external_connection": "none"
           }
         ]
 
