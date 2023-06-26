@@ -200,6 +200,51 @@ Returns a string with bounding box for the project study area coordinates in a `
           "bounds": "-0.11569976806640624,51.49624032118747,-0.06420135498046875,51.52829020697338"
         }
 
+## Project Plugins [/projects/{projectid}/plugins/]
+
+### Get project plugins  [GET]
+Returns the id and description of all the plugins that are added / linked to the project
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        [
+          {"id": "b08bd2e7-0595-481b-95c9-86c39b57d3db" , "description":"Buildings 3D Viewer"},
+          {"id":"3fef8104-c4b2-47fd-86ca-4ebcbf29ef13", "description":"Dashboard"},
+        ]
+
+### Add project Plugins  [POST]
+Add plugins with the specified ID to the project, any existing plugins will be removed
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+
+
+            ["14c338ae-ab5f-47c9-b067-e40710dc29c9","c467ad77-087d-481e-9f09-7afafc2720a0"]
+            
+            
++ Response 200 (application/json)
+
+        {
+            "message": "2 plugins added successfully"
+        }
+
+
+
 ## Project Study Area Center [/projects/{projectid}/center/]
 
 ### Get project center  [GET]
