@@ -218,6 +218,7 @@ Returns a list of all the usernames that are a part of the project.
           ]
         }
 
+
 ## Project Study Area Bounds [/projects/{projectid}/bounds/]
 
 ### Get project bounds  [GET]
@@ -3599,8 +3600,64 @@ Returns a GeoJSON feature collection object of of the all the policy diagrams fo
         }
 
 
-## Group Tasks API
-A set of resources related to Tasks and Boards within a Geodesignhub Project
+## Group Actions API
+A set of resources related to Actions within a Geodesignhub Project
+
+## Project Stakeholders [/projects/{projectid}/stakeholders/]
+
+### List stakeholders of a project [GET]
+Returns a list of all the stakeholder that are added to the project.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "stakeholders": [
+            {
+              "id": "50e6964e-dcf8-4967-bbd2-b448679f1514"
+              "name": "City Council"
+            },
+            {
+              "id": "c204303b-d23a-4fa7-b4b2-6a4c51410c81",
+              "name": "Department of Transport"
+            },
+            {
+              "id": "50f13d08-a472-4477-88a3-5a14b294ca33",
+              "name": "Private Company"
+            }
+          ]
+        }
+
+### Add project stakeholder  [POST]
+Add multiple stakeholders to the project
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+
+
+            ["City Council","Department of Transport"]
+            
+            
++ Response 200 (application/json)
+
+        {
+            "message": "2 stakeholders created successfully and added to the project"
+        }
+
 
 ## Boards Collection [/projects/{projectid}/boards/]
 
