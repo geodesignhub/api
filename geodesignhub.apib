@@ -218,6 +218,62 @@ Returns a list of all the usernames that are a part of the project.
           ]
         }
 
+## Project Stakeholders [/projects/{projectid}/stakeholders/]
+
+### List stakeholders of a project [GET]
+Returns a list of all the stakeholder that are added to the project.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+          "stakeholders": [
+            {
+              "id": "50e6964e-dcf8-4967-bbd2-b448679f1514"
+              "name": "City Council"
+            },
+            {
+              "id": "c204303b-d23a-4fa7-b4b2-6a4c51410c81",
+              "name": "Department of Transport"
+            },
+            {
+              "id": "50f13d08-a472-4477-88a3-5a14b294ca33",
+              "name": "Private Company"
+            }
+          ]
+        }
+
+### Add project stakeholder  [POST]
+Add multiple stakeholders to the project
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+
+
+            ["City Council","Department of Transport"]
+            
+            
++ Response 200 (application/json)
+
+        {
+            "message": "2 stakeholders created successfully and added to the project"
+        }
+
+
 
 ## Project Study Area Bounds [/projects/{projectid}/bounds/]
 
@@ -258,7 +314,7 @@ Returns the id and description of all the plugins that are added / linked to the
           {"id":"3fef8104-c4b2-47fd-86ca-4ebcbf29ef13", "description":"Dashboard"},
         ]
 
-### Add project Plugins  [POST]
+### Add project plugins  [POST]
 Add plugins with the specified ID to the project, any existing plugins will be removed
 
 + Parameters
@@ -274,6 +330,47 @@ Add plugins with the specified ID to the project, any existing plugins will be r
 
             ["14c338ae-ab5f-47c9-b067-e40710dc29c9","c467ad77-087d-481e-9f09-7afafc2720a0"]
             
+            
++ Response 200 (application/json)
+
+        {
+            "message": "2 plugins added successfully"
+        }
+
+
+## External Data Layers [/projects/{projectid}/data_layers/]
+
+### Add External Layer [POST]
+Add external layers as overlays or underlays to a Project
+
+    - `server_type` The type of external server, acceptable values are `esri` for a public ESRI ArcGIS Server, `eorg` for ESRI ArcGIS Organization that requires a ESRI login, `mapserver` for Mapserver, `geoserver` for Geoserver, `mapcentia-gc2` for Mapcentia GC2, `other` for any other server
+    - `layer_type` The type of layer that is linked, acceptable values are `WMS` for a standard Web Mapping server, `XYZ` for a map tile layer, `esri-basemap` for a ESRI ArcGIS basemap, `esri-tilelayer` for a ESRI Tile layer, `esri-dynamicmaplayer` for a ESRI Dynamic Map Layer, `esri-imagemaplayer` for ESRI Image map layer. This supports all the layers supported by ESRI Leaflet
+    - `url` A valid `https` url link to to the layer, all non HTTPS links will be igonred
+    - `layer_name` The name of the layer on the hosting server
+    - `attribution` A attribution to the data, if applicable
+    - `display_name` The name of the layer as will be displayed in the user interface
+
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+
+
+            {
+              "server_type": "mapcentia-gc2",
+              "layer_type": "wms",
+              "url": "https://cagmap.snh.gov.uk/arcgis/services/snh_habitats_and_species/MapServer/WMSServer?",
+              "layer_name": "Habitats",
+              "attribution": "Map data from OpenStreetMap.",
+              "display_name": "All Natural Habitats"
+            }
+                        
             
 + Response 200 (application/json)
 
@@ -3600,64 +3697,8 @@ Returns a GeoJSON feature collection object of of the all the policy diagrams fo
         }
 
 
-## Group Actions API
-A set of resources related to Actions within a Geodesignhub Project
-
-## Project Stakeholders [/projects/{projectid}/stakeholders/]
-
-### List stakeholders of a project [GET]
-Returns a list of all the stakeholder that are added to the project.
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-        {
-          "stakeholders": [
-            {
-              "id": "50e6964e-dcf8-4967-bbd2-b448679f1514"
-              "name": "City Council"
-            },
-            {
-              "id": "c204303b-d23a-4fa7-b4b2-6a4c51410c81",
-              "name": "Department of Transport"
-            },
-            {
-              "id": "50f13d08-a472-4477-88a3-5a14b294ca33",
-              "name": "Private Company"
-            }
-          ]
-        }
-
-### Add project stakeholder  [POST]
-Add multiple stakeholders to the project
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-    + Body
-
-
-            ["City Council","Department of Transport"]
-            
-            
-+ Response 200 (application/json)
-
-        {
-            "message": "2 stakeholders created successfully and added to the project"
-        }
-
+## Group Tasks API
+A set of resources related to Tasks and Boards within a Geodesignhub Project
 
 ## Boards Collection [/projects/{projectid}/boards/]
 
