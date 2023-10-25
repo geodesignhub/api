@@ -343,12 +343,12 @@ Add plugins with the specified ID to the project, any existing plugins will be r
 ### Add External Layer [POST]
 Add external layers as overlays or underlays to a Project
 
-    - `server_type` The type of external server, acceptable values are `esri` for a public ESRI ArcGIS Server, `eorg` for ESRI ArcGIS Organization that requires a ESRI login, `mapserver` for Mapserver, `geoserver` for Geoserver, `mapcentia-gc2` for Mapcentia GC2, `other` for any other server
-    - `layer_type` The type of layer that is linked, acceptable values are `WMS` for a standard Web Mapping server, `XYZ` for a map tile layer, `esri-basemap` for a ESRI ArcGIS basemap, `esri-tilelayer` for a ESRI Tile layer, `esri-dynamicmaplayer` for a ESRI Dynamic Map Layer, `esri-imagemaplayer` for ESRI Image map layer. This supports all the layers supported by ESRI Leaflet
-    - `url` A valid `https` url link to to the layer, all non HTTPS links will be igonred
-    - `layer_name` The name of the layer on the hosting server
-    - `attribution` A attribution to the data, if applicable
-    - `display_name` The name of the layer as will be displayed in the user interface
+  - `server_type` The type of external server, acceptable values are `esri` for a public ESRI ArcGIS Server, `eorg` for ESRI ArcGIS Organization that requires a ESRI login, `mapserver` for Mapserver, `geoserver` for Geoserver, `mapcentia-gc2` for Mapcentia GC2, `other` for any other server.
+  - `layer_type` The type of layer that is linked, acceptable values are `WMS` for a standard Web Mapping server, `XYZ` for a map tile layer, `esri-basemap` for a ESRI ArcGIS basemap, `esri-tilelayer` for a ESRI Tile layer, `esri-dynamicmaplayer` for a ESRI Dynamic Map Layer, `esri-imagemaplayer` for ESRI Image map layer. 
+  - `url` A valid `https` url link to to the layer, all non HTTPS links will be igonred
+  - `layer_name` The name of the layer on the hosting server
+  - `attribution` A attribution to the data, if applicable
+  - `display_name` The name of the layer as will be displayed in the user interface
 
 
 + Parameters
