@@ -340,6 +340,30 @@ Add plugins with the specified ID to the project, any existing plugins will be r
 
 ## External Data Layers [/projects/{projectid}/data_layers/]
 
+### Get External Layers [GET]
+A list of external layers added to this project
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+            [
+              {
+                "server_type": "mapcentia-gc2",
+                "layer_type": "wms",
+                "url": "https://cagmap.snh.gov.uk/arcgis/services/snh_habitats_and_species/MapServer/WMSServer?",
+                "layer_name": "Habitats",
+                "attribution": "Map data from OpenStreetMap.",
+                "display_name": "All Natural Habitats"
+              }
+            ]
+                      
 ### Add External Layer [POST]
 Add external layers as overlays or underlays to a Project
 
