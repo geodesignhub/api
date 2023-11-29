@@ -407,10 +407,36 @@ Add external layers as overlays or underlays to a Project
             "message": "2 plugins added successfully"
         }
                       
-## External Data Layers [/projects/{project_id}/data_layers/{layer_id}/delete]
+## External Data Layers [/projects/{project_id}/data_layers/{layer_id}/]
 
+### Get External Layer Detail [GET]
+Get the details of a single external layer added to this project
+
++ Parameters
+    + project_id: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+            [
+              {
+                "id": 123,
+                "server_type": "mapcentia-gc2",
+                "layer_type": "wms",
+                "url": "https://cagmap.snh.gov.uk/arcgis/services/snh_habitats_and_species/MapServer/WMSServer?",
+                "layer_name": "Habitats",
+                "attribution": "Map data from OpenStreetMap.",
+                "display_name": "All Natural Habitats",
+                "additional_metadata": {}
+              }
+            ]
+                      
 ### Delete External Layer [DELETE]
-Delete external layers as overlays or underlays to a Project
+Delete external layers linked to the project, you must be a project administrator to delete a layer
 
 + Parameters
     + project_id: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
