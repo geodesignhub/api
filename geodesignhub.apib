@@ -91,7 +91,7 @@ Create a new project in Geodesignhub, a set of data is requried to create a proj
     - `map_bounds` Represents a rectangular geographical area on a map. 
     - `map_center` Represents a center as comma seperated Latitude,Longitude center
     - `zoom_level` Sets the zoom of the map
-    - `systems` A list of systems that will be created in the project. Each object should have a `name`, `verbose_description`, `color` and `cost` value for the system. Maximum nine systems can be provided.
+    - `systems` A list of systems that will be created in the project. Each object should have a `name`, `display`, `color` and `cost` value for the system. Maximum nine systems can be provided.
     - `tags` A list of tags that can be added to Diagrams. Each object should have a `tag` and `code` property both as strings. 
     - `plugins` A list of plugin UUIDs to attach to the project, you can use the the user interface to add them as well. 
 
@@ -111,7 +111,7 @@ Create a new project in Geodesignhub, a set of data is requried to create a proj
                 "map_bounds": "-6.257314682006836,53.32508049349382,-6.250877380371094,53.328925153953186",
                 "map_center" : "-6.254,53.327",
                 "zoom_level":16,
-                "systems": [{"name":"ENE", "tag":"POR", "verbose_description":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "verbose_description":"Agriculture", "color":"#d9cd91", "cost":4000}],
+                "systems": [{"name":"ENE", "tag":"POR", "display":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "display":"Agriculture", "color":"#d9cd91", "cost":4000}],
                 "tags": [{"tag": "Green Housing","code": "0.5"}],
                 "plugins":[]
             }
@@ -133,7 +133,7 @@ Create a new project in Geodesignhub, a set of data is requried to create a proj
     - `map_bounds` Represents a rectangular geographical area on a map. 
     - `map_center` Represents a center as comma seperated Latitude,Longitude center
     - `zoom_level` Sets the zoom of the map
-    - `systems` A list of systems that will be created in the project. Each object should have a `name`, `verbose_description`, `color` and `cost` value for the system. Maximum nine systems can be provided.
+    - `systems` A list of systems that will be created in the project. Each object should have a `name`, `display`, `color` and `cost` value for the system. Maximum nine systems can be provided.
     - `tags` A list of tags that can be added to Diagrams. Each object should have a `tag` and `code` property both as strings.
     - `plugins` A list of plugin UUIDs to attach to the project, you can use the the user interface to add them as well. 
 
@@ -153,7 +153,7 @@ Create a new project in Geodesignhub, a set of data is requried to create a proj
                 "map_bounds": "-6.257314682006836,53.32508049349382,-6.250877380371094,53.328925153953186",
                 "map_center" : "-6.254,53.327",
                 "zoom_level":16,
-                "systems": [{"name":"ENE", "tag":"POR", "verbose_description":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "verbose_description":"Agriculture", "color":"#d9cd91", "cost":4000}]
+                "systems": [{"name":"ENE", "tag":"POR", "display":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "display":"Agriculture", "color":"#d9cd91", "cost":4000}]
                 "tags": [{"tag": "Green Housing","code": "0.5"}],
                 "plugins":[]
             }
