@@ -1022,7 +1022,8 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "end_date": "2022-02-22",
                 "additional_metadata": {},
                 "tag_codes": "wp6sw",
-                "flat_geobuf_url":""
+                "flat_geobuf_url":"",
+                "external_geometries":""
               },
               {
                 "geojson": {
@@ -1122,7 +1123,8 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "end_date": "2022-02-22",
                 "additional_metadata": {},
                 "tag_codes": "wp6sw",
-                "flat_geobuf_url":""
+                "flat_geobuf_url":"",
+                "external_geometries":""
               },
               {
                 "geojson": {
@@ -1206,7 +1208,8 @@ Returns the a list of Diagram geometries and properties for all the diagrams in 
                 "end_date": "2022-02-22",
                 "additional_metadata": {},
                 "tag_codes": "wp6sw",
-                "flat_geobuf_url":""
+                "flat_geobuf_url":"",
+                "external_geometries":""
               }
             ]
             
@@ -1370,7 +1373,8 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
                 "storeys_below_ground": -10
             },
             "tag_codes": "wp6sw",
-            "flat_geobuf_url":""
+            "flat_geobuf_url":"",
+            "external_geometries":""
         }
 
 
@@ -2317,6 +2321,95 @@ Add a new diagram to a system
 
         {
             "diagram_id": "2042",
+            "grid_location":"TRANS 1",
+            "status":"Successfully added diagram to the project"
+        }
+
+## Add Project Diagram with external geometries [/projects/{projectid}/systems/{sysid}/add/external/project/]
+
+### Add a FGB project diagram [POST]
+Add a new diagram to a system with external geometries
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + sysid: 23 (integer) - The ID of the system in the form of an integer
+
+
+    
++ Request (application/json)
+    A diagram must contain the following details
+
+    + `flat_geobuf_url` A url to a Flatgeobuf (FGB) file
+    + `featuretype` Whether the diagram is a line or a polygon
+    + `description` Title of the diagram
+    + `fundingtype` Specify the funding type of the diagram:
+        - pu - Public
+        - pp - Public + Private
+        - pr - Private 
+        - bu - Budgeted
+
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+    
+            {
+                "flat_geobuf_url": "https://s3.amazon.com/my_fbg_file.fgb",
+                "featuretype": "polygon",
+                "description": "A new shopping mall", 
+                "fundingtype":"pu"
+            }
+            
++ Response 200 (application/json)
+
+        {
+            "diagram_id":"2321",
+            "grid_location":"TRANS 1",
+            "status":"Successfully added diagram to the project"
+        }
+
+
+## Add Policy Diagram with external geometries [/projects/{projectid}/systems/{sysid}/add/external/policy/]
+
+### Add a FGB policy diagram [POST]
+Add a new diagram to a system with external geometries
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + sysid: 23 (integer) - The ID of the system in the form of an integer
+
+
+    
++ Request (application/json)
+    A diagram must contain the following details
+
+    + `flat_geobuf_url` A url to a Flatgeobuf (FGB) file
+    + `featuretype` Whether the diagram is a line or a polygon
+    + `description` Title of the diagram
+    + `fundingtype` Specify the funding type of the diagram:
+        - pu - Public
+        - pp - Public + Private
+        - pr - Private 
+        - bu - Budgeted
+
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+    
+            {
+                "flat_geobuf_url": "https://s3.amazon.com/my_fbg_file.fgb",
+                "featuretype": "polygon",
+                "description": "A new shopping mall", 
+                "fundingtype":"pu"
+            }
+            
++ Response 200 (application/json)
+
+        {
+            "diagram_id":"2321",
             "grid_location":"TRANS 1",
             "status":"Successfully added diagram to the project"
         }
