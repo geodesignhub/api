@@ -2325,9 +2325,9 @@ Add a new diagram to a system
             "status":"Successfully added diagram to the project"
         }
 
-## Add Project Diagram with external geometries [/projects/{projectid}/systems/{sysid}/add/external/project/]
+## Add External Project Diagram [/projects/{projectid}/systems/{sysid}/add/external/project/]
 
-### Add a FGB project diagram [POST]
+### Add a project diagram [POST]
 Add a new diagram to a system with external geometries
 
 + Parameters
@@ -2355,7 +2355,50 @@ Add a new diagram to a system with external geometries
     + Body
     
             {
-                "flat_geobuf_url": "https://s3.amazon.com/my_fbg_file.fgb",
+                "geometry": {
+                      "type": "FeatureCollection",
+                      "features": [
+                        {
+                          "type": "Feature",
+                          "properties": {},
+                          "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                              [
+                                [
+                                  -0.09307265281677245,
+                                  51.516194024429446
+                                ],
+                                [
+                                  -0.09310483932495117,
+                                  51.51524595382876
+                                ],
+                                [
+                                  -0.09136676788330077,
+                                  51.51502562473659
+                                ],
+                                [
+                                  -0.09100198745727538,
+                                  51.515639872882986
+                                ],
+                                [
+                                  -0.09152770042419434,
+                                  51.51636093622468
+                                ],
+                                [
+                                  -0.09307265281677245,
+                                  51.51622740683744
+                                ],
+                                [
+                                  -0.09307265281677245,
+                                  51.516194024429446
+                                ]
+                              ]
+                            ]
+                          }
+                        }
+                      ]
+                    },
                 "featuretype": "polygon",
                 "description": "A new shopping mall", 
                 "fundingtype":"pu"
@@ -2369,194 +2412,6 @@ Add a new diagram to a system with external geometries
             "status":"Successfully added diagram to the project"
         }
 
-
-## Add Policy Diagram with external geometries [/projects/{projectid}/systems/{sysid}/add/external/policy/]
-
-### Add a FGB policy diagram [POST]
-Add a new diagram to a system with external geometries
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + sysid: 23 (integer) - The ID of the system in the form of an integer
-
-
-    
-+ Request (application/json)
-    A diagram must contain the following details
-
-    + `flat_geobuf_url` A url to a Flatgeobuf (FGB) file
-    + `featuretype` Whether the diagram is a line or a polygon
-    + `description` Title of the diagram
-    + `fundingtype` Specify the funding type of the diagram:
-        - pu - Public
-        - pp - Public + Private
-        - pr - Private 
-        - bu - Budgeted
-
-    + Headers
-
-            Authorization: Token ABC123
-            
-    + Body
-    
-            {
-                "flat_geobuf_url": "https://s3.amazon.com/my_fbg_file.fgb",
-                "featuretype": "polygon",
-                "description": "A new shopping mall", 
-                "fundingtype":"pu"
-            }
-            
-+ Response 200 (application/json)
-
-        {
-            "diagram_id":"2321",
-            "grid_location":"TRANS 1",
-            "status":"Successfully added diagram to the project"
-        }
-
-
-## Add Evaluation Map to a System [/projects/{projectid}/systems/{sysid}/e/map/json/{username}/]
-
-### Add evaluation map for a user [POST]
-A geoJSON object that has the updated JSON layer of either evaluation or impact data submitted to the user
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + sysid: 23 (integer) - The ID of the system in the form of an integer
-    + username: ufeusr1 (string) - The username of a user who is a member of the project
-
-    
-+ Request (application/json)
-    + Headers
-
-            Authorization: Token ABC123
-            
-    + Body
-    
-            {
-                "type":"FeatureCollection",
-                "features":[
-                    {
-                        "type":"Feature",
-                        "properties":{
-                            "areatype":"red"
-                        },
-                        "geometry":{
-                            "type":"Polygon",
-                            "coordinates":[
-                                [
-                                    [
-                                        -0.09307265281677245,
-                                        51.516194024429446
-                                    ],
-                                    [
-                                        -0.09310483932495117,
-                                        51.51524595382876
-                                    ],
-                                    [
-                                        -0.09136676788330077,
-                                        51.51502562473659
-                                    ],
-                                    [
-                                        -0.09100198745727538,
-                                        51.515639872882986
-                                    ],
-                                    [
-                                        -0.09152770042419434,
-                                        51.51636093622468
-                                    ],
-                                    [
-                                        -0.09307265281677245,
-                                        51.51622740683744
-                                    ],
-                                    [
-                                        -0.09307265281677245,
-                                        51.516194024429446
-                                    ]
-                                ]
-                            ]
-                        }
-                    }
-                ]
-            }
-            
-+ Response 200 (application/json)
-
-        {
-            "msg":"Data successfully posted to users."}
-        }
-
-
-## Add Impact Map to a System [/projects/{projectid}/systems/{sysid}/i/map/json/{username}/]
-
-### Add a impact map for a user [POST]
-A geoJSON object that has the updated JSON layer of either evaluation or impact data submitted to the user
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + sysid: 23 (integer) - The ID of the system in the form of an integer
-    + username: ufeusr1 (string) - The username of a user who is a member of the project
-
-    
-+ Request (application/json)
-    + Headers
-
-            Authorization: Token ABC123
-            
-    + Body
-    
-            {
-                "type":"FeatureCollection",
-                "features":[
-                    {
-                        "type":"Feature",
-                        "properties":{
-                            "areatype":"purple2"
-                        },
-                        "geometry":{
-                            "type":"Polygon",
-                            "coordinates":[
-                                [
-                                    [
-                                        -0.09307265281677245,
-                                        51.516194024429446
-                                    ],
-                                    [
-                                        -0.09310483932495117,
-                                        51.51524595382876
-                                    ],
-                                    [
-                                        -0.09136676788330077,
-                                        51.51502562473659
-                                    ],
-                                    [
-                                        -0.09100198745727538,
-                                        51.515639872882986
-                                    ],
-                                    [
-                                        -0.09152770042419434,
-                                        51.51636093622468
-                                    ],
-                                    [
-                                        -0.09307265281677245,
-                                        51.51622740683744
-                                    ],
-                                    [
-                                        -0.09307265281677245,
-                                        51.516194024429446
-                                    ]
-                                ]
-                            ]
-                        }
-                    }
-                ]
-            }
-            
-+ Response 200 (application/json)
-
-        {
-            "msg":"Data successfully posted to users."}
-        }
 
 ## User System Diagram Selection [/projects/{projectid}/systems/{sysid}/{username}/diagrams/]
 
