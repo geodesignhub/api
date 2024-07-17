@@ -3820,7 +3820,7 @@ Returns details the timeline that is associated with the passed board ID.
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + boardid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the digaram in the form of an uuid4 string
+    + boardid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the board in the form of an uuid4 string
     
 + Request
     + Headers
@@ -3874,3 +3874,382 @@ Returns details the timeline that is associated with the passed board ID.
                     }
                 ]
             }
+            
+            
+
+## Group Surveys API
+A set of resources related to Surveys within a Geodesignhub Project
+
+## Surveys Collection [/projects/{projectid}/surveys/]
+
+### List all surveys created for a project [GET]
+Return all the surveys for that project.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+            [
+                {
+                    "id": "5a22bf21-186d-42f3-862a-8b58c9febdee",
+                    "study_area_fc": {
+                        "type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            -6.247701644897461,
+                                            53.323183666714215
+                                        ],
+                                        [
+                                            -6.247701644897461,
+                                            53.330872983017066
+                                        ],
+                                        [
+                                            -6.260576248168945,
+                                            53.330872983017066
+                                        ],
+                                        [
+                                            -6.260576248168945,
+                                            53.323183666714215
+                                        ],
+                                        [
+                                            -6.247701644897461,
+                                            53.323183666714215
+                                        ]
+                                    ]
+                                ]
+                            }
+                        ]
+                    },
+                    "default_geometry_polygon": {
+                        "type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Polygon",
+                                    "coordinates": [
+                                        [
+                                            [
+                                                -6.253085,
+                                                53.327516
+                                            ],
+                                            [
+                                                -6.255141,
+                                                53.330873
+                                            ],
+                                            [
+                                                -6.255223,
+                                                53.326797
+                                            ],
+                                            [
+                                                -6.252972,
+                                                53.323184
+                                            ],
+                                            [
+                                                -6.253085,
+                                                53.327516
+                                            ]
+                                        ]
+                                    ]
+                                },
+                                "properties": {}
+                            }
+                        ]
+                    },
+                    "default_geometry_line": {
+                        "type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "LineString",
+                                    "coordinates": [
+                                        [
+                                            [
+                                                -6.257835,
+                                                53.326874
+                                            ],
+                                            [
+                                                -6.257322,
+                                                53.3308
+                                            ],
+                                            [
+                                                -6.251095,
+                                                53.326237
+                                            ]
+                                        ]
+                                    ]
+                                },
+                                "properties": {}
+                            }
+                        ]
+                    },
+                    "bounds": "-6.260576248168945,53.323183666714215,-6.247701644897461,53.330872983017066",
+                    "zoom": 15,
+                    "center": "-6.254,53.327"
+                }
+            ]
+            
+
+   
+## Survey Detail [/projects/{projectid}/surveys/{survey_id}/]
+
+### Get details of a Survey [GET]
+Returns details the survey that is passed in the survey ID.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + survey_id: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the survey in the form of an uuid4 string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+        {
+            "id": "5a22bf21-186d-42f3-862a-8b58c9febdee",
+            "study_area_fc": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Polygon",
+                        "coordinates": [
+                            [
+                                [
+                                    -6.247701644897461,
+                                    53.323183666714215
+                                ],
+                                [
+                                    -6.247701644897461,
+                                    53.330872983017066
+                                ],
+                                [
+                                    -6.260576248168945,
+                                    53.330872983017066
+                                ],
+                                [
+                                    -6.260576248168945,
+                                    53.323183666714215
+                                ],
+                                [
+                                    -6.247701644897461,
+                                    53.323183666714215
+                                ]
+                            ]
+                        ]
+                    }
+                ]
+            },
+            "default_geometry_polygon": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [
+                                        -6.253085,
+                                        53.327516
+                                    ],
+                                    [
+                                        -6.255141,
+                                        53.330873
+                                    ],
+                                    [
+                                        -6.255223,
+                                        53.326797
+                                    ],
+                                    [
+                                        -6.252972,
+                                        53.323184
+                                    ],
+                                    [
+                                        -6.253085,
+                                        53.327516
+                                    ]
+                                ]
+                            ]
+                        },
+                        "properties": {}
+                    }
+                ]
+            },
+            "default_geometry_line": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "LineString",
+                            "coordinates": [
+                                [
+                                    [
+                                        -6.257835,
+                                        53.326874
+                                    ],
+                                    [
+                                        -6.257322,
+                                        53.3308
+                                    ],
+                                    [
+                                        -6.251095,
+                                        53.326237
+                                    ]
+                                ]
+                            ]
+                        },
+                        "properties": {}
+                    }
+                ]
+            },
+            "bounds": "-6.260576248168945,53.323183666714215,-6.247701644897461,53.330872983017066",
+            "zoom": 15,
+            "center": "-6.254,53.327"
+        }
+            
+            
++ Response 200 (application/json)
+
+        {
+            "message": "Survey with ID 5a22bf21-186d-42f3-862a-8b58c9febdee updated successfully",
+            "status": 1
+        }
+        
+        
+## Update Survey [/projects/{projectid}/surveys/{survey_id}/update]
+
+### Update survey fields [POST]
+Update the details e.g. study area boundary for the survey that is passed in the survey ID.
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    + survey_id: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the survey in the form of an uuid4 string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+    + Body
+    
+        
+            {
+                "study_area_fc": {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [
+                                        -6.247701644897461,
+                                        53.323183666714215
+                                    ],
+                                    [
+                                        -6.247701644897461,
+                                        53.330872983017066
+                                    ],
+                                    [
+                                        -6.260576248168945,
+                                        53.330872983017066
+                                    ],
+                                    [
+                                        -6.260576248168945,
+                                        53.323183666714215
+                                    ],
+                                    [
+                                        -6.247701644897461,
+                                        53.323183666714215
+                                    ]
+                                ]
+                            ]
+                        }
+                    ]
+                },
+                "default_geometry_polygon": {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Polygon",
+                                "coordinates": [
+                                    [
+                                        [
+                                            -6.253085,
+                                            53.327516
+                                        ],
+                                        [
+                                            -6.255141,
+                                            53.330873
+                                        ],
+                                        [
+                                            -6.255223,
+                                            53.326797
+                                        ],
+                                        [
+                                            -6.252972,
+                                            53.323184
+                                        ],
+                                        [
+                                            -6.253085,
+                                            53.327516
+                                        ]
+                                    ]
+                                ]
+                            },
+                            "properties": {}
+                        }
+                    ]
+                },
+                "default_geometry_line": {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "LineString",
+                                "coordinates": [
+                                    [
+                                        [
+                                            -6.257835,
+                                            53.326874
+                                        ],
+                                        [
+                                            -6.257322,
+                                            53.3308
+                                        ],
+                                        [
+                                            -6.251095,
+                                            53.326237
+                                        ]
+                                    ]
+                                ]
+                            },
+                            "properties": {}
+                        }
+                    ]
+                }
+            }
+            
++ Response 200 (application/json)
+
+        {
+            "message": "Survey with ID 5a22bf21-186d-42f3-862a-8b58c9febdee updated successfully",
+            "status": 1
+        }
+         
