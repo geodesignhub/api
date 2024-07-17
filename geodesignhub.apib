@@ -1490,7 +1490,6 @@ Returns the a JSON detailing the tags associated / linked to a diagram for the t
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
     + diagramid: 12 (integer) - The ID of the diagram in the form of an integer
-    
 
 + Request (application/json)
     + Headers
@@ -4145,8 +4144,7 @@ Update the details e.g. study area boundary for the survey that is passed in the
             Authorization: Token ABC123
             
     + Body
-    
-        
+
             {
                 "study_area_fc": {
                     "type": "FeatureCollection",
@@ -4244,7 +4242,8 @@ Update the details e.g. study area boundary for the survey that is passed in the
                         }
                     ]
                 }
-            }
+            }    
+    
             
 + Response 200 (application/json)
 
