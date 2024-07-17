@@ -4132,7 +4132,10 @@ Returns details the survey that is passed in the survey ID.
 ## Update Survey [/projects/{projectid}/surveys/{survey_id}/update]
 
 ### Update survey fields [POST]
-Update the details e.g. study area boundary for the survey that is passed in the survey ID.
+Update the details e.g. study area boundary for the survey that is passed in the survey ID. Currently, five properties are supported: 
+- Study Area Boundary (study_area_fc): A GeoJSON feature collection representing the study area boundary
+- Default Polygon (default_geometry_polygon): A GeoJSON feature collection representing the default diagram that will be showed in the survey
+- Default Linestring (default_geometry_line): A GeoJSON feature collection representing the default diagram and line that will be showed in the survey
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
