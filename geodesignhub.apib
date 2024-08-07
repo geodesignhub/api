@@ -2975,38 +2975,6 @@ Returns a list of usernames of users who are members of this change team.
         }
         
 
-## Change Team Priorities [/projects/{projectid}/cteams/{cteamid}/priorities/]
-
-### List change team priorities  [GET]
-Returns a object that details the system priorities and rank for this change team.
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + cteamid: 12 (integer) - The ID of the change team in the form of an integer
-
-+ Response 200 (application/json)
-
-        {
-          "priorities": [
-            {
-              "sysid": "1",
-              "pref": "10",
-              "rank": 1
-            },
-            {
-              "sysid": "2",
-              "pref": "6",
-              "rank": 2
-            }
-          ]
-        }
-        
-
 
 ## Design Synthesis ESRI JSON [/projects/{projectid}/cteams/{cteamid}/{synthesisid}/esri/]
 
