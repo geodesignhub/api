@@ -1374,8 +1374,7 @@ Returns the a GeoJSON feature collection geometry of the diagram that is passed 
                 "storeys_below_ground": -10
             },
             "tag_codes": "wp6sw",
-            "flat_geobuf_url":"",
-            "external_geometries":""
+            "external_geometry_detail": {}
         }
 
 
@@ -2412,7 +2411,7 @@ Add a new diagram to a system with external geometries
     + Body
     
             {
-                "url": "https://s3.amazonaws.com/my_fgbfile.fgb",
+                "flat_geobuf_url": "https://s3.amazonaws.com/my_fgbfile.fgb",
                 "layer_type": "fgb-layer",
                 "featuretype": "polygon",
                 "description": "A new shopping mall", 
