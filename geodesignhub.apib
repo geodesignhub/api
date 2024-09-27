@@ -2344,10 +2344,10 @@ Add a new diagram to a system with external geometries
 + Request (application/json)
     A diagram must contain the following details
 
-    + `url` A url to a Flatgeobuf (FGB) file or the ESRI FeatureLayer service
+    + `url` A url to a Flatgeobuf (FGB) file or the URL for Cloud Optimized GeoTIFF layer
     + `layer_type` Specify the type of geometry linked: 
         - fgb-layer - A Flatgeobuf File 
-        - esri-org-featurelayer - A ESRI Organization Feature layer
+        - cogs - A Cloud Optimized GeoTIFF layer
     + `featuretype` Whether the diagram is a line or a polygon
     + `description` Title of the diagram
     + `fundingtype` Specify the funding type of the diagram:
@@ -2393,10 +2393,10 @@ Add a new diagram to a system with external geometries
 + Request (application/json)
     A diagram must contain the following details
 
-    + `url` A url to a Flatgeobuf (FGB) file or the ESRI FeatureLayer service
+    + `url` A url to a Flatgeobuf (FGB) file or the URL for Cloud Optimized GeoTIFF layer
     + `layer_type` Specify the type of geometry linked: 
         - fgb-layer - A Flatgeobuf File 
-        - esri-org-featurelayer - A ESRI Organization Feature layer
+        - cogs - A Cloud Optimized GeoTIFF layer
     + `featuretype` Whether the diagram is a line or a polygon
     + `description` Title of the diagram
     + `fundingtype` Specify the funding type of the diagram:
@@ -2412,7 +2412,7 @@ Add a new diagram to a system with external geometries
     + Body
     
             {
-                "flat_geobuf_url": "https://s3.amazonaws.com/my_fgbfile.fgb",
+                "url": "https://s3.amazonaws.com/my_fgbfile.fgb",
                 "layer_type": "fgb-layer",
                 "featuretype": "polygon",
                 "description": "A new shopping mall", 
