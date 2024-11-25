@@ -830,6 +830,7 @@ Returns a JSON object detailing all the tags associated with a project, a diagra
             }
         ]
 
+
 ## Group Diagrams API
 Resources related to diagrams on Geodesignhub.
 
@@ -1728,6 +1729,36 @@ Returns the geometry of the diagrams selected by the user for the particular pro
                   }
               ]
           }
+
+
+## Group Diagram Groups API
+Resources related to diagram groups on Geodesignhub
+
+## Create Diagram Group  [/projects/{projectid}/diagrams/group/]
+
+### Bulk Create diagram group [POST]
+Creates multiple diagram groups in a project. Using this endpoint, you can create multiple multiple diagram groups in your project
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
+            
+    + Body
+
+
+            {"diagram_groups":[{"diagrams":[12,13,15], "group_name":"Green Infrastructure plan"}]}
+            
+            
++ Response 200 (application/json)
+
+        {
+            "status": "Diagram Groups created successfully"
+        }
 
 
 
