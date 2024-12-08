@@ -2387,7 +2387,8 @@ Add a new diagram to a system with external geometries
         - pr - Private 
         - bu - Budgeted
         
-    You can also include optional the following optional fields
+    You can also include optional the following optional fields- 
+    + `additional_metadata` A arbitrary JSON object to hold any other metadata
     + `cost` Specify the cost for the diagram, as an integer
     + `cost_type` Specify the type of cost, if a unit cost is specified, Geodesignhub will multiply that cost with the number of hectares in the diagram
         - t - total cost
@@ -2404,7 +2405,8 @@ Add a new diagram to a system with external geometries
                 "layer_type": "fgb-layer",
                 "featuretype": "polygon",
                 "description": "A new shopping mall", 
-                "fundingtype":"pu"
+                "fundingtype":"pu",
+                "additional_metadata": {}
             }
             
 + Response 200 (application/json)
@@ -2443,6 +2445,7 @@ Add a new diagram to a system with external geometries
         - bu - Budgeted
 
     You can also include optional the following optional fields
+    + `additional_metadata` A arbitrary JSON object to hold any other metadata
     + `cost` Specify the cost for the diagram, as an integer
     + `cost_type` Specify the type of cost, if a unit cost is specified, Geodesignhub will multiply that cost with the number of hectares in the diagram
         - t - total cost
@@ -2459,7 +2462,8 @@ Add a new diagram to a system with external geometries
                 "layer_type": "fgb-layer",
                 "featuretype": "polygon",
                 "description": "A new shopping mall", 
-                "fundingtype":"pu"
+                "fundingtype":"pu",
+                "additional_metadata": {}
             }
             
 + Response 200 (application/json)
