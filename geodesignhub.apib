@@ -122,47 +122,6 @@ Create a new project in Geodesignhub, a set of data is requried to create a proj
             "message":"New Project and systems created, they will appear on user1's profile page"
         }
 
-## IGC Project Creation [/projects/create-igc-project/]
-
-### Create New IGC Project [POST]
-Create a new project in Geodesignhub, a set of data is requried to create a project, please review below:
-
-    - `gpl_project_id` A Geoplanner project ID, contact your IGC administrator for this code if you dont have it. 
-    - `project_title` Title of the project, it will be displayed at the top of every project
-    - `project_description` Title of the project, it will be displayed at the top of every project
-    - `map_bounds` Represents a rectangular geographical area on a map. 
-    - `map_center` Represents a center as comma seperated Latitude,Longitude center
-    - `zoom_level` Sets the zoom of the map
-    - `systems` A list of systems that will be created in the project. Each object should have a `name`, `verbose_description`, `color` and `cost` value for the system. Maximum nine systems can be provided.
-    - `tags` A list of tags that can be added to Diagrams. Each object should have a `tag` and `code` property both as strings.
-    - `plugins` A list of plugin UUIDs to attach to the project, you can use the the user interface to add them as well. 
-
-
-+ Request (application/json)
-
-    + Headers
-    
-            Authorization: Token ABC123
-            
-    + Body
-        
-            {
-                "gpl_project_id": "ifY96Z8u1zvbd8Bb24gaaBqgD7l3bag8", 
-                "project_title" : "Dublin Geodesign",
-                "project_description":"Alternative futures for Ranelagh",
-                "map_bounds": "-6.257314682006836,53.32508049349382,-6.250877380371094,53.328925153953186",
-                "map_center" : "-6.254,53.327",
-                "zoom_level":16,
-                "systems": [{"name":"ENE", "tag":"POR", "verbose_description":"Energy", "color":"#ab507e", "cost":40000}, {"name":"AG", "tag":"POR", "verbose_description":"Agriculture", "color":"#d9cd91", "cost":4000}]
-                "tags": [{"tag": "Green Housing","code": "0.5"}],
-                "plugins":[]
-            }
-            
-+ Response 201 (application/json)
-
-        {
-            "message":"New Project and systems created, they will appear on user1's profile page"
-        }
 
 ## Project Detail [/projects/{projectid}/]
 
@@ -2405,8 +2364,7 @@ Add a new diagram to a system with external geometries
                 "layer_type": "fgb-layer",
                 "featuretype": "polygon",
                 "description": "A new shopping mall", 
-                "fundingtype":"pu",
-                "additional_metadata": {}
+                "fundingtype":"pu"
             }
             
 + Response 200 (application/json)
