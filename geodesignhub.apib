@@ -831,6 +831,27 @@ Returns a JSON object detailing all the tags associated with a project, a diagra
         ]
 
 
+
+## List Tags Attribution [/projects/{projectid}/tags/attribution/]
+### Get attribution for tags [GET]
+Returns a JSON object for the attribution string for the tags in the project, if no attribution exists, then a empty string is returned
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+            [
+                {
+                    "credit": "Copyright 2024 Geodesignhub.com"
+                }
+            ]
+
 ## Group Diagrams API
 Resources related to diagrams on Geodesignhub.
 
@@ -2375,7 +2396,7 @@ Add a new diagram to a system with external geometries
 + Request (application/json)
     A diagram must contain the following details
 
-    + `url` A url to a Flatgeobuf (FGB) file or the URL for Cloud Optimized GeoTIFF layer
+    + `url` A url to a Flatgeobuf (FGB) file or the URL for ESRI Organization Feature Layer
     + `layer_type` Specify the type of geometry linked: 
         - fgb-layer - A Flatgeobuf File 
         - esri-org-featurelayer - A Feature Layer in an ESRI Organization
@@ -2431,7 +2452,7 @@ Add a new diagram to a system with external geometries
 + Request (application/json)
     A diagram must contain the following details
 
-    + `url` A url to a Flatgeobuf (FGB) file or the URL for Cloud Optimized GeoTIFF layer
+    + `url` A url to a Flatgeobuf (FGB) file or the URL for ESRI Organization Feature Layer
     + `layer_type` Specify the type of geometry linked: 
         - fgb-layer - A Flatgeobuf File 
         - esri-org-featurelayer - A Feature Layer in an ESRI Organization
