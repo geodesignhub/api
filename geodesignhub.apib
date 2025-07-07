@@ -167,7 +167,7 @@ Create a new project in Geodesignhub, a set of data is requried to create a proj
 ## Project Detail [/projects/{projectid}/]
 
 ### Get a single project [GET]
-Returns the title and description of the selected project. Project name is a sixteen character hash of the project.
+Returns the title and description of the selected project. Project name is a sixteen character hash of the project. The brief is shared as a markdown text.
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -185,7 +185,8 @@ Returns the title and description of the selected project. Project name is a six
               "projectdesc": "lgd",
               "startdate": "2016-11-15",
               "projecttype": "free",
-              "external_connection": "none"
+              "external_connection": "none",
+              "brief":""
             }
 
 ## Project Members [/projects/{projectid}/members/]
