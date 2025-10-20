@@ -338,6 +338,57 @@ Add plugins with the specified ID to the project, any existing plugins will be r
             "message": "2 plugins added successfully"
         }
 
+## Negotiation Logs [/projects/{projectid}/negotiation_logs/]
+
+### Get All Negotiation Logs [GET]
+A list of external layers added to this project, only project administrators can access data at this endpoint
+
++ Parameters
+    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
+    
++ Request
+    + Headers
+
+            Authorization: Token ABC123
+            
++ Response 200 (application/json)
+
+                {
+                    "all_negotiations": [
+                        {
+                            "session_id": "a06ca4cb-128b-487a-b7b4-9e12eec3d8f8",
+                            "moves": [
+                                {
+                                    "diagram": 155,
+                                    "move": "Added",
+                                    "timestamp": "2024-08-26T14:36:35.749Z"
+                                },
+                                {
+                                    "diagram": 160,
+                                    "move": "Added",
+                                    "timestamp": "2024-08-26T14:36:36.148Z"
+                                },
+                                {
+                                    "diagram": 140,
+                                    "move": "Added",
+                                    "timestamp": "2024-08-26T14:36:39.560Z"
+                                }
+                            ],
+                            "design_a": "2A72FUHAVQTX6NQA",
+                            "design_b": "Z4P4UANYMCSMYDF7",
+                            "project_id": "b522ccca68f6decf"
+                        }
+                    ]
+                }
++ Response 403 (application/json)
+
+            [
+              {
+                "status": "User not a administrator of this project"
+              }
+            ]
+              
+                      
 
 ## External Data Layers [/projects/{projectid}/data_layers/]
 
