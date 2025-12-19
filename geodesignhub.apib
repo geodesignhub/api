@@ -219,61 +219,6 @@ Returns a list of all the usernames that are a part of the project.
           ]
         }
 
-## Project Stakeholders [/projects/{projectid}/stakeholders/]
-
-### List stakeholders of a project [GET]
-Returns a list of all the stakeholder that are added to the project.
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-        {
-          "stakeholders": [
-            {
-              "id": "50e6964e-dcf8-4967-bbd2-b448679f1514"
-              "name": "City Council"
-            },
-            {
-              "id": "c204303b-d23a-4fa7-b4b2-6a4c51410c81",
-              "name": "Department of Transport"
-            },
-            {
-              "id": "50f13d08-a472-4477-88a3-5a14b294ca33",
-              "name": "Private Company"
-            }
-          ]
-        }
-
-### Add project stakeholder  [POST]
-Add multiple stakeholders to the project
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-    + Body
-
-
-            ["City Council","Department of Transport"]
-            
-            
-+ Response 200 (application/json)
-
-        {
-            "message": "2 stakeholders created successfully and added to the project"
-        }
-
 
 
 ## Project Study Area Bounds [/projects/{projectid}/bounds/]
@@ -341,7 +286,7 @@ Add plugins with the specified ID to the project, any existing plugins will be r
 ## Negotiation Logs [/projects/{projectid}/negotiation_logs/]
 
 ### Get All Negotiation Logs [GET]
-A list of external layers added to this project, only project administrators can access data at this endpoint
+A list of external layers added to this project, only project administrators can access this data
 
 + Parameters
     + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
@@ -3860,117 +3805,6 @@ Returns a GeoJSON feature collection object of of the all the policy diagrams fo
         }
 
 
-## Group Tasks API
-A set of resources related to Tasks and Boards within a Geodesignhub Project
-
-## Boards Collection [/projects/{projectid}/boards/]
-
-### List all boards created for a project [GET]
-Return all the boards for that project.
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-            [
-                {
-                    "id": "8f99a13f-04ae-48e3-8f51-40d967ec38ca",
-                    "synthesisid": "PCJ4JKX9MVSJGN6J",
-                    "description": "N.1"
-                }
-            ]
-
-            
-## Board Detail [/projects/{projectid}/boards/{boardid}/]
-
-### Get details of a board [GET]
-Returns details the board that is passed in the boards ID.
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + boardid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the digaram in the form of an uuid4 string
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-        {
-            "id": "8f99a13f-04ae-48e3-8f51-40d967ec38ca",
-            "updated": "2019-04-27T20:47:36.071973"
-        }
-
-## Board timeline Detail [/projects/{projectid}/boards/{boardid}/timeline/]
-
-### Get details of the timeline in a board [GET]
-Returns details the timeline that is associated with the passed board ID.
-
-+ Parameters
-    + projectid: 5c84b38a16ebeed0 (string) - The ID of a project in the form of an string
-    + boardid: 8f99a13f-04ae-48e3-8f51-40d967ec38ca (uuid) - The ID of the board in the form of an uuid4 string
-    
-+ Request
-    + Headers
-
-            Authorization: Token ABC123
-            
-+ Response 200 (application/json)
-
-            {
-                "id": "8016e23a-70bc-48a9-9a05-5a8bb48bd16f",
-                "timeline_data": [
-                    {
-                        "content": "TRANS 1 Add more Bars/Restaurants to the Amsterdamse Poort",
-                        "start": "2020-02-26T00:00:00.000Z",
-                        "end": "2022-02-22T00:00:00.000Z",
-                        "system_id": 46,
-                        "diagram_id": 139,
-                        "project_or_policy": "project"
-                    },
-                    {
-                        "content": "LDH 1 t3",
-                        "start": "2020-09-05T00:00:00.000Z",
-                        "end": "2022-09-02T00:00:00.000Z",
-                        "system_id": 48,
-                        "diagram_id": 138,
-                        "project_or_policy": "project"
-                    },
-                    {
-                        "content": "MIX 2 test",
-                        "start": "2020-02-01T00:00:00.000Z",
-                        "end": "2022-02-01T00:00:00.000Z",
-                        "system_id": 49,
-                        "diagram_id": 178,
-                        "project_or_policy": "project"
-                    },
-                    {
-                        "content": "PREC 2 test",
-                        "start": "2020-02-26T00:00:00.000Z",
-                        "end": "2022-02-22T00:00:00.000Z",
-                        "system_id": 50,
-                        "diagram_id": 160,
-                        "project_or_policy": "project"
-                    },
-                    {
-                        "content": "T2",
-                        "end": "2024-07-24T09:08:47.416251+00:00",
-                        "start": "2023-07-26T09:08:47.416150+00:00",
-                        "system_id": "Tasks",
-                        "diagram_id": "37d2bdd9-09e5-4eb3-a2d2-b6c87c5fe93d",
-                        "project_or_policy": "policy"
-                    }
-                ]
-            }
-            
-            
 
 ## Group Surveys API
 A set of resources related to Surveys within a Geodesignhub Project
